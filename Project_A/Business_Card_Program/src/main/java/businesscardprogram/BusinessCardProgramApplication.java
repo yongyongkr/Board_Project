@@ -1,4 +1,4 @@
-package Project_A.Business_Card_Program;
+package businesscardprogram;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

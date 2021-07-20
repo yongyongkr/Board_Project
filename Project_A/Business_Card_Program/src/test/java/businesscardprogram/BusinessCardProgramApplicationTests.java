@@ -1,4 +1,4 @@
-package Project_A.Business_Card_Program;
+package businesscardprogram;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
