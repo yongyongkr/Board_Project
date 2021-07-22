@@ -4,8 +4,14 @@ public class Member {
 
     private Long id;
     private String name;
-    private Long number;
+    private String number;
     private String company;
+
+    public Member(String name, String number, String company) {
+        this.name = name;
+        this.number = number;
+        this.company = company;
+    }
 
     public Long getId() {
         return id;
@@ -23,11 +29,11 @@ public class Member {
         this.name = name;
     }
 
-    public Long getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(Long number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
