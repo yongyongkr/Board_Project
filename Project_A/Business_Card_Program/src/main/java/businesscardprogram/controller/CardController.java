@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class CardController {
 
     @GetMapping("create")
-    public String create(Model model){
+    public String create(Model model) {
         model.addAttribute("data", "create");
         return "createTemp";
     }

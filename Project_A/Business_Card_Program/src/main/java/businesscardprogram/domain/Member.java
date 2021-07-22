@@ -7,13 +7,6 @@ public class Member {
     private Long number;
     private String company;
 
-    public Member(Long id, String name, Long number, String company) {
-        this.id = id;
-        this.name = name;
-        this.number = number;
-        this.company = company;
-    }
-
     public Long getId() {
         return id;
     }
