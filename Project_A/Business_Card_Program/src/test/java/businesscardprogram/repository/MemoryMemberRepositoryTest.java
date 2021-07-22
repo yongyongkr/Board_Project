@@ -2,6 +2,7 @@ package businesscardprogram.repository;
 
 import businesscardprogram.domain.Member;
 import java.util.List;
+import java.util.Optional;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
@@ -22,6 +23,15 @@ class MemoryMemberRepositoryTest {
 
         repository.save(member);
         Member result = repository.findByName("철").get();
+        assertThat(member).isEqualTo(result);
+    }
+
+    @Test
+    public void findById() {
+        Member member = new Member("철수", "01012345678", "Naver");
+
+        repository.save(member);
+        Member result = repository.findById(member.getId()).get();
         assertThat(member).isEqualTo(result);
     }
 
@@ -48,6 +58,6 @@ class MemoryMemberRepositoryTest {
 
         List<Member> result = repository.findAll();
 
-        assertThat(result.size()).isEqualTo(2);
+        assertThat(result).hasSize(2);
     }
 }
