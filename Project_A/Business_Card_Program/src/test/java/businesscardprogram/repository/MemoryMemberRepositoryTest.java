@@ -1,12 +1,11 @@
 package businesscardprogram.repository;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import businesscardprogram.domain.Member;
 import java.util.List;
-import java.util.Optional;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 class MemoryMemberRepositoryTest {
 

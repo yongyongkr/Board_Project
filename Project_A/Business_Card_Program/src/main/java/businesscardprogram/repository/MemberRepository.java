@@ -1,7 +1,6 @@
 package businesscardprogram.repository;
 
 import businesscardprogram.domain.Member;
-
 import java.util.List;
 import java.util.Optional;
 
