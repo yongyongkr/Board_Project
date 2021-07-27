@@ -4,11 +4,13 @@ import businesscardprogram.domain.Member;
 import businesscardprogram.service.MemberService;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MemberController {
@@ -36,8 +38,8 @@ public class MemberController {
 
     @GetMapping("/members")
     public String list(Model model) {
-        List<Member> members = memberService.findMembers();
-        model.addAttribute("members", members);
+        List<Member> member = memberService.findMembers();
+        model.addAttribute("member", member);
         return "members/memberList";
     }
 }

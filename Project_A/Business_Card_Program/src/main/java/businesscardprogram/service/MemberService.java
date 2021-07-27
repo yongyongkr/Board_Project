@@ -4,7 +4,9 @@ import businesscardprogram.domain.Member;
 import businesscardprogram.repository.MemberRepository;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
@@ -36,5 +38,10 @@ public class MemberService {
 
     public Optional<Member> findOne(Long memberId) {
         return memberRepository.findById(memberId);
+    }
+
+    @Transactional
+    public Optional<Member> searchMembers(String name) {
+        return memberRepository.findByName(name);
     }
 }
