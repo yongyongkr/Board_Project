@@ -40,14 +40,14 @@ public class MemoryArticleRepository implements ArticleRepository {
     @Override
     public void plus(Long id) {
         Article article1 = store.get(id);
-        Long likes = article1.getLikes() + 1;
+        Long likes = article1.getLikes() + 1L;
         article1.setLikes(likes);
     }
 
     @Override
     public void minus(Long id) {
         Article article1 = store.get(id);
-        Long dislikes = article1.getDislikes() + 1;
+        Long dislikes = article1.getDislikes() + 1L;
         article1.setDislikes(dislikes);
     }
 
@@ -56,5 +56,9 @@ public class MemoryArticleRepository implements ArticleRepository {
         return store.values().stream()
             .filter(a -> a.getName().equals(article.getName()))
             .findAny().isPresent();
+    }
+
+    public void clearStore() {
+        store.clear();
     }
 }

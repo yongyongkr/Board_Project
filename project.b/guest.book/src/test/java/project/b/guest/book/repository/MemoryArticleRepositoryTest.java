@@ -7,12 +7,19 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import project.b.guest.book.article.Article;
 
 class MemoryArticleRepositoryTest {
 
     MemoryArticleRepository repository = new MemoryArticleRepository();
+
+    @AfterEach
+    public void afterEach() {
+        repository.clearStore();
+    }
 
     @Test
     void save() {
