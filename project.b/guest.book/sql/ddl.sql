@@ -3,6 +3,6 @@ CREATE TABLE article(
     name VARCHAR(255) NOT NULL,
     content VARCHAR(255) NOT NULL,
     time long not null,
-    likes LONG not null default 0,
-    dislikes LONG not null default 0
+    likes int not null default 0,
+    dislikes int not null default 0
 );

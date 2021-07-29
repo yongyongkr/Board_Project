@@ -1,12 +1,9 @@
 package project.b.guest.book.service;
 
 import java.util.List;
-import javax.transaction.Transactional;
 import project.b.guest.book.article.Article;
 import project.b.guest.book.repository.ArticleRepository;
-import project.b.guest.book.repository.JpaArticleRepository;
 
-@Transactional
 public class GuestBookService {
 
     private final ArticleRepository articleRepository;
@@ -16,12 +13,8 @@ public class GuestBookService {
     }
 
     public Long upload(Article article) {
-        if (articleRepository.existOrNot(article)) {
-            return -1L;
-        } else {
-            articleRepository.save(article);
-            return article.getId();
-        }
+        articleRepository.save(article);
+        return article.getId();
     }
 
     public List<Article> articleList() {
@@ -29,8 +22,9 @@ public class GuestBookService {
     }
 
     public void deleteByDislikes(Article article) {
-        if (article.getDislikes() >= 10)
+        if (article.getDislikes() >= 10) {
             articleRepository.delete(article.getId());
+        }
     }
 
     public void likes(Long id) {
