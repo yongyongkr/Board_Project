@@ -9,6 +9,7 @@ import project.b.guest.book.article.Article;
 public interface ArticleRepository {
 
     Article save(Article article);
+    Optional<Article> findById(Long id);
     List<Article> findAll();
     void delete(Long id);
     void plus(Long id);

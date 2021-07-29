@@ -24,20 +24,20 @@ public class GuestBookService {
         }
     }
 
-    List<Article> articleList() {
+    public List<Article> articleList() {
         return articleRepository.findAll();
     }
 
-    void deleteByDislikes(Article article) {
+    public void deleteByDislikes(Article article) {
         if (article.getDislikes() >= 10)
             articleRepository.delete(article.getId());
     }
 
-    void likes(Long id) {
+    public void likes(Long id) {
         articleRepository.plus(id);
     }
 
-    void dislikes(Long id) {
+    public void dislikes(Long id) {
         articleRepository.minus(id);
     }
 }

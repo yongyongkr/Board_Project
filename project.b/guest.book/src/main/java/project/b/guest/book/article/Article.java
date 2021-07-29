@@ -10,12 +10,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
 @Entity
 @RequiredArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Article {
 
     @Id
@@ -23,7 +25,7 @@ public class Article {
     private Long id;
     private String name;
     private String content;
-    private Time time;
+    private long time;
     private Long likes;
     private Long dislikes;
 }

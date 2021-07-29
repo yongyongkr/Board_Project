@@ -1,7 +1,5 @@
 package project.b.guest.book.repository;
 
-import java.sql.Time;
-import java.sql.Timestamp;
 import java.util.List;
 import java.util.Optional;
 import javax.persistence.EntityManager;
@@ -22,6 +20,13 @@ public class JpaArticleRepository implements ArticleRepository {
     }
 
     @Override
+    public Optional<Article> findById(Long id) {
+        return Optional.ofNullable(
+            em.createQuery("select a from Article a where a.id = :id", Article.class)
+                .getSingleResult());
+    }
+
+    @Override
     public List<Article> findAll() {
         return em.createQuery("select a from Article a", Article.class).getResultList();
     }
@@ -38,7 +43,7 @@ public class JpaArticleRepository implements ArticleRepository {
 
     @Override
     public void minus(Long id) {
-        em.createQuery("update Article set dislikes = dislikes - 1 where id = :id");
+        em.createQuery("update Article set dislikes = dislikes + 1 where id = :id");
     }
 
     @Override
