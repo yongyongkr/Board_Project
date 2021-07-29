@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import project.b.guest.book.repository.ArticleRepository;
 import project.b.guest.book.repository.JpaArticleRepository;
+import project.b.guest.book.repository.MemoryArticleRepository;
 import project.b.guest.book.service.GuestBookService;
 
 @Configuration
@@ -26,6 +27,6 @@ public class SpringConfig {
 
     @Bean
     public ArticleRepository articleRepository() {
-        return new JpaArticleRepository(em);
+        return new MemoryArticleRepository();
     }
 }

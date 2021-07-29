@@ -26,6 +26,6 @@ public class Article {
     private String name;
     private String content;
     private long time;
-    private Long likes;
-    private Long dislikes;
+    private int likes;
+    private int dislikes;
 }

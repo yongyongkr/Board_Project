@@ -1,6 +1,7 @@
 package project.b.guest.book.repository;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,15 +17,23 @@ public class MemoryArticleRepository implements ArticleRepository {
     public Article save(Article article) {
         article.setId(++sequence);
         article.setTime(System.currentTimeMillis());
-        article.setLikes(0L);
-        article.setDislikes(0L);
-        store.put(article.getId(), article);
+        article.setLikes(0);
+        article.setDislikes(0);
+        if (validateTime(article) < 60)
+            store.put(article.getId(), article);
         return article;
     }
 
     @Override
     public Optional<Article> findById(Long id) {
         return Optional.ofNullable(store.get(id));
+    }
+
+    @Override
+    public long findByName(String name) {
+        return store.values().stream()
+            .filter(a -> a.getName().equals(name))
+            .map(Article::getTime).sorted(Comparator.reverseOrder()).findFirst().get();
     }
 
     @Override
@@ -40,14 +49,14 @@ public class MemoryArticleRepository implements ArticleRepository {
     @Override
     public void plus(Long id) {
         Article article1 = store.get(id);
-        Long likes = article1.getLikes() + 1L;
+        int likes = article1.getLikes() + 1;
         article1.setLikes(likes);
     }
 
     @Override
     public void minus(Long id) {
         Article article1 = store.get(id);
-        Long dislikes = article1.getDislikes() + 1L;
+        int dislikes = article1.getDislikes() + 1;
         article1.setDislikes(dislikes);
     }
 
@@ -56,6 +65,15 @@ public class MemoryArticleRepository implements ArticleRepository {
         return store.values().stream()
             .filter(a -> a.getName().equals(article.getName()))
             .findAny().isPresent();
+    }
+
+    @Override
+    public long validateTime(Article article) {
+        if (existOrNot(article)) {
+            long lastTime = findByName(article.getName());
+            return (article.getTime() - lastTime) / 1000;
+        }
+        return 0l;
     }
 
     public void clearStore() {

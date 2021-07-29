@@ -27,6 +27,12 @@ public class JpaArticleRepository implements ArticleRepository {
     }
 
     @Override
+    public long findByName(String name) {
+        return em.createQuery("select a.time from Article a where a.name = :name",
+                    Long.class).getMaxResults();
+    }
+
+    @Override
     public List<Article> findAll() {
         return em.createQuery("select a from Article a", Article.class).getResultList();
     }
@@ -38,12 +44,12 @@ public class JpaArticleRepository implements ArticleRepository {
 
     @Override
     public void plus(Long id) {
-        em.createQuery("update Article set likes = likes + 1L where id = :id");
+        em.createQuery("update Article set likes = likes + 1 where id = :id");
     }
 
     @Override
     public void minus(Long id) {
-        em.createQuery("update Article set dislikes = dislikes + 1L where id = :id");
+        em.createQuery("update Article set dislikes = dislikes + 1 where id = :id");
     }
 
     @Override
@@ -57,16 +63,9 @@ public class JpaArticleRepository implements ArticleRepository {
         return true;
     }
 
-//    @Override
-//    public Optional<Time> validateTime(Article article) {
-//        String name = article.getName();
-//        Timestamp past = (Timestamp) em.createQuery(
-//                "select max(a.time) from Article a where a.name = :name")
-//            .setParameter("name", name)
-//            .getSingleResult();
-//        return (Optional<Time>) em.createQuery(
-//            "select timestampdiff(minute, :past, current_timestamp) from Article a"
-//                + "where a.name = :name")
-//            .setParameter("past", past).setParameter("name", name).getSingleResult();
-//    }
+    @Override
+    public long validateTime(Article article) {
+        return 0l;
+    }
 }
+
