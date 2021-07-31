@@ -30,10 +30,10 @@ public class MemoryArticleRepository implements ArticleRepository {
     }
 
     @Override
-    public long findByName(String name) {
+    public Optional<Long> findByName(String name) {
         return store.values().stream()
             .filter(a -> a.getName().equals(name))
-            .map(Article::getTime).sorted(Comparator.reverseOrder()).findFirst().get();
+            .map(Article::getTime).sorted(Comparator.reverseOrder()).findFirst();
     }
 
     @Override
@@ -70,7 +70,7 @@ public class MemoryArticleRepository implements ArticleRepository {
     @Override
     public long validateTime(Article article) {
         if (existOrNot(article)) {
-            long lastTime = findByName(article.getName());
+            long lastTime = findByName(article.getName()).get();
             return (article.getTime() - lastTime) / 1000;
         }
         return 0l;

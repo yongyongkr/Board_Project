@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static project.b.guest.book.repository.ArticleRepository.DelayTime;
 
 import java.util.List;
+import java.util.Optional;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -73,10 +74,10 @@ class MemoryArticleRepositoryTest {
         repository.save(article2);
 
         //when
-        long uploadTime = repository.findByName("김철수");
+        Optional<Long> uploadTime = repository.findByName("김철수");
 
         //then
-        assertThat(uploadTime).isEqualTo(article2.getTime());
+        assertThat(uploadTime.get()).isEqualTo(article2.getTime());
     }
 
     @Test

@@ -12,7 +12,7 @@ public interface ArticleRepository {
 
     Optional<Article> findById(Long id);
 
-    long findByName(String name);
+    Optional<Long> findByName(String name);
 
     List<Article> findAll();
 
