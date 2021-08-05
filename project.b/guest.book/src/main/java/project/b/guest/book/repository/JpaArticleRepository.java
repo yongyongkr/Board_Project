@@ -14,9 +14,8 @@ public class JpaArticleRepository implements ArticleRepository {
     }
 
     @Override
-    public Article save(Article article) {
+    public void save(Article article) {
         em.persist(article);
-        return article;
     }
 
     @Override
@@ -27,14 +26,14 @@ public class JpaArticleRepository implements ArticleRepository {
     }
 
     @Override
-    public long findByName(String name) {
-        return em.createQuery("select a.time from Article a where a.name = :name",
-                    Long.class).getMaxResults();
+    public Optional<Long> findByName(String name) {
+        return em.createQuery("select max(a.time) from Article a where a.name = :name")
+            .getResultStream().findFirst();
     }
 
     @Override
     public List<Article> findAll() {
-        return em.createQuery("select a from Article a", Article.class).getResultList();
+        return em.createQuery("select a from Article a").getResultList();
     }
 
     @Override
@@ -64,8 +63,14 @@ public class JpaArticleRepository implements ArticleRepository {
     }
 
     @Override
-    public long validateTime(Article article) {
-        return 0l;
+    public int validateTime(Article article) {
+        if (existOrNot(article)) {
+            Long lastTime = findByName(article.getName()).get();
+            return em.createQuery(
+                "select timestampdiff(second, :lastTime, article.getTime)").getFirstResult();
+        } else {
+            return 0;
+        }
     }
 }
 

@@ -1,6 +1,5 @@
 package project.b.guest.book.repository;
 
-import java.awt.AWTException;
 import java.awt.Robot;
 import java.util.List;
 import java.util.Optional;
@@ -8,7 +7,7 @@ import project.b.guest.book.article.Article;
 
 public interface ArticleRepository {
 
-    Article save(Article article);
+    void save(Article article);
 
     Optional<Article> findById(Long id);
 
@@ -24,7 +23,7 @@ public interface ArticleRepository {
 
     boolean existOrNot(Article article);
 
-    long validateTime(Article article);
+    int validateTime(Article article);
 
     static void DelayTime(int delaySec) throws Exception {
         Robot robot = new Robot();

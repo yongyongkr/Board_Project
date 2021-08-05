@@ -1,69 +1,57 @@
 package project.b.guest.book.service;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
-
 import java.util.List;
-import java.util.Optional;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Before;
+import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import project.b.guest.book.article.Article;
-import project.b.guest.book.repository.ArticleRepository;
-import project.b.guest.book.repository.MemoryArticleRepository;
+import project.b.guest.book.repository.JpaArticleRepository;
 
+@Transactional
 class GuestBookServiceTest {
 
-    GuestBookService guestBookService;
-    MemoryArticleRepository articleRepository;
-
-    @BeforeEach
-    public void beforeEach() {
-        articleRepository = new MemoryArticleRepository();
-        guestBookService = new GuestBookService(articleRepository);
+    private final EntityManager em;
+    GuestBookServiceTest(EntityManager em) {
+        this.em = em;
     }
 
-    @AfterEach
-    public void afterEach() {
-        articleRepository.clearStore();
-    }
+    GuestBookService guestBookService = new GuestBookService(new JpaArticleRepository(em));
 
     @Test
-    @DisplayName("게시물 업로드")
     void upload() {
         //given
-        Article article1 = new Article();
-        article1.setName("김철수");
-        article1.setContent("안녕하세요");
+        Article article = new Article();
+        article.setName("영수");
+        article.setContext("hello");
+        System.out.println("article = " + article);
 
         //when
-        Long saveId = guestBookService.upload(article1);
+        guestBookService.upload(article);
 
         //then
-        Article findArticle = articleRepository.findById(saveId).get();
-        assertEquals(article1.getContent(), findArticle.getContent());
+        List<Article> articles = guestBookService.articleList();
+        System.out.println("articles = " + articles);
     }
 
     @Test
-    @DisplayName("싫어요가 10개 이상이면 삭제")
-    void deleteByDislikes() {
+    void articleList() {
         //given
-        Article article1 = new Article();
-        article1.setName("김철수");
-        article1.setContent("안녕하세요");
-        guestBookService.upload(article1);
-
-        for(int i=0; i<11; i++)
-            articleRepository.minus(article1.getId());
 
         //when
-        guestBookService.deleteByDislikes(article1);
+        List<Article> articles = guestBookService.articleList();
+        Assertions.assertThat(articles.size()).isEqualTo(0);
+    }
 
-        //then
-        assertThat(articleRepository.findAll().size()).isEqualTo(0);
+    @Test
+    void deleteByDislikes() {
+    }
+
+    @Test
+    void likes() {
+    }
+
+    @Test
+    void dislikes() {
     }
 }

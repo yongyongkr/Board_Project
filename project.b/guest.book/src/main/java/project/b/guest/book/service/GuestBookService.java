@@ -6,15 +6,14 @@ import project.b.guest.book.repository.ArticleRepository;
 
 public class GuestBookService {
 
-    private final ArticleRepository articleRepository;
+    private ArticleRepository articleRepository;
 
     public GuestBookService(ArticleRepository articleRepository) {
         this.articleRepository = articleRepository;
     }
 
-    public Long upload(Article article) {
+    public void upload(Article article) {
         articleRepository.save(article);
-        return article.getId();
     }
 
     public List<Article> articleList() {
