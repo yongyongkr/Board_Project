@@ -8,15 +8,17 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Member {
+public class Movie {
 
-    @Id
-    @Column(name = "MEMBER_ID")
-    private String id;
+    @Id @GeneratedValue
+    @Column(name = "MOVIE_ID")
+    private Long id;
 
-    private String name;
-    private int age;
+    private String title;
+    private int runningTime;
 
     @OneToMany(mappedBy = "Reservation")
-    private List<Reservation> reservations;
+    private List<ScreeningInfo> screeningInfos;
+
+    private Rate filmRating;
 }
