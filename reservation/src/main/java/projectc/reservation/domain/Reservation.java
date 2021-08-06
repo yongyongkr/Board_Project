@@ -9,10 +9,12 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import lombok.Getter;
 
 @Entity
 @Getter
+@Table(name = "RESERVATION")
 public class Reservation {
 
     @Id
@@ -43,6 +45,7 @@ public class Reservation {
 
     public void setScreeningInfo(ScreeningInfo screeningInfo) {
         this.screeningInfo = screeningInfo;
+        screeningInfo.getReservations().add(this);
     }
 
     protected Reservation() {
