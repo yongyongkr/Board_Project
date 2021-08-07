@@ -1,14 +1,12 @@
 package projectc.reservation.repository;
 
-import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.assertj.core.api.Assertions;
+import java.time.LocalDateTime;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 import projectc.reservation.domain.Movie;
@@ -32,7 +30,8 @@ public class ScreeningInfoRepositoryTest {
         movieRepository.save(movie1);
 
         ScreeningInfo screeningInfo = ScreeningInfo.createScreeningInfo(150,
-            "2021-08-07T02:00:00", "2021-08-07T03:45:00",
+            LocalDateTime.of(2021, 8, 7, 2, 0, 0),
+            LocalDateTime.of(2021, 8, 7, 3, 45, 0),
             15000, 10000, movie1);
 
         //when
@@ -41,7 +40,8 @@ public class ScreeningInfoRepositoryTest {
 
         //then
         assertThat(150).isEqualTo(findScreeningInfo.getRemnant());
-        assertThat("2021-08-07T03:45:00").isEqualTo(findScreeningInfo.getEndTime());
+        assertThat(LocalDateTime.of(2021, 8, 7, 3, 45, 0))
+            .isEqualTo(findScreeningInfo.getEndTime());
 
         assertThat(movie1.getFilmRating()).isEqualTo(findScreeningInfo.getMovie().getFilmRating());
     }
@@ -53,7 +53,8 @@ public class ScreeningInfoRepositoryTest {
         Long savedMovieId = movieRepository.save(movie1);
 
         ScreeningInfo screeningInfo = ScreeningInfo.createScreeningInfo(150,
-            "2021-08-07T02:00:00", "2021-08-07T03:45:00",
+            LocalDateTime.of(2021, 8, 7, 2, 0, 0),
+            LocalDateTime.of(2021, 8, 7, 3, 45, 0),
             15000, 10000, movie1);
         Long savedScreeningInfoId = screeningInfoRepository.save(screeningInfo);
 

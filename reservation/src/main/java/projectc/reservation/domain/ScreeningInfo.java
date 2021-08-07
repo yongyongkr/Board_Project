@@ -26,8 +26,8 @@ public class ScreeningInfo {
     private Long id;
 
     private int remnant;
-    private String startTime;
-    private String endTime;
+    private LocalDateTime startTime;
+    private LocalDateTime endTime;
     private int adultPrice;
     private int childPrice;
 
@@ -37,6 +37,22 @@ public class ScreeningInfo {
 
     @OneToMany(mappedBy = "screeningInfo")
     private List<Reservation> reservations = new ArrayList<>();
+
+    public boolean checkRemnant(int count) {
+        if (count <= remnant) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void addRemnant(int count) {
+        remnant += count;
+    }
+
+    public void subtractRemnant(int count) {
+        remnant -= count;
+    }
 
     //==연관관계 메서드==//
     public void setMovie(Movie movie) {
@@ -51,7 +67,7 @@ public class ScreeningInfo {
     protected ScreeningInfo() {
     }
 
-    protected ScreeningInfo(int remnant, String startTime, String endTime, int adultPrice,
+    protected ScreeningInfo(int remnant, LocalDateTime startTime, LocalDateTime endTime, int adultPrice,
         int childPrice) {
         this.remnant = remnant;
         this.startTime = startTime;
@@ -60,8 +76,8 @@ public class ScreeningInfo {
         this.childPrice = childPrice;
     }
 
-    public static ScreeningInfo createScreeningInfo(int remnant, String startTime,
-        String endTime, int adultPrice, int childPrice, Movie movie, Reservation... reservations) {
+    public static ScreeningInfo createScreeningInfo(int remnant, LocalDateTime startTime,
+        LocalDateTime endTime, int adultPrice, int childPrice, Movie movie, Reservation... reservations) {
         ScreeningInfo screeningInfo = new ScreeningInfo(remnant, startTime, endTime, adultPrice,
             childPrice);
         screeningInfo.setMovie(movie);

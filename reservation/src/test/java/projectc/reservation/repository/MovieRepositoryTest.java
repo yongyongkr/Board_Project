@@ -3,6 +3,7 @@ package projectc.reservation.repository;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.time.LocalDateTime;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
@@ -43,10 +44,10 @@ public class MovieRepositoryTest {
     public void 영화삭제() throws Exception {
         //given
         Movie movie = Movie.createMovie("MissionImpossible", 105, Rate.All);
-        Long savedId = movieRepository.save(movie);
+        movieRepository.save(movie);
 
         //when
-        movieRepository.delete(5L); //주석 처리했을 때 expected : 1
+        movieRepository.delete(movie.getId()); //주석 처리했을 때 expected : 1
 
         //then
         assertThat(0).isEqualTo(movieRepository.findAll().size());
@@ -59,14 +60,16 @@ public class MovieRepositoryTest {
         Long savedMovieId = movieRepository.save(movie);
 
         ScreeningInfo screeningInfo1 = ScreeningInfo.createScreeningInfo(150,
-            "2021-08-07T02:00:00", "2021-08-07T03:45:00",
+            LocalDateTime.of(2021,8,7,2,0,0),
+            LocalDateTime.of(2021,8,7,3,45,0),
             15000, 10000, movie);
-        Long savedScreeningInfoId1 = screeningInfoRepository.save(screeningInfo1);
+        screeningInfoRepository.save(screeningInfo1);
 
         ScreeningInfo screeningInfo2 = ScreeningInfo.createScreeningInfo(150,
-            "2021-08-09T02:00:00", "2021-08-09T03:45:00",
+            LocalDateTime.of(2021,8,9,2,0,0),
+            LocalDateTime.of(2021,8,9,3,45,0),
             15000, 10000, movie);
-        Long savedScreeningInfoId2 = screeningInfoRepository.save(screeningInfo2);
+        screeningInfoRepository.save(screeningInfo2);
 
         //when
         assertThat(movie.getScreeningInfos().size()).isEqualTo(2);
