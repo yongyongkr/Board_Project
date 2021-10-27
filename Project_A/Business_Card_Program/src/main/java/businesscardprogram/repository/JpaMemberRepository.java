@@ -4,14 +4,14 @@ import businesscardprogram.domain.Member;
 import java.util.List;
 import java.util.Optional;
 import javax.persistence.EntityManager;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
+@Repository
+@RequiredArgsConstructor
 public class JpaMemberRepository implements MemberRepository {
 
     private final EntityManager em;
-
-    public JpaMemberRepository(EntityManager em) {
-        this.em = em;
-    }
 
     @Override
     public Member save(Member member) {
@@ -26,13 +26,12 @@ public class JpaMemberRepository implements MemberRepository {
     }
 
     @Override
-    public Optional<Member> findByName(String name) {
+    public List<Member> findByName(String name) {
         List<Member> result = em
             .createQuery("select m from Member m where m.name = :name", Member.class)
             .setParameter("name", name)
             .getResultList();
-
-        return result.stream().findAny();
+        return result;
     }
 
     @Override
