@@ -4,19 +4,24 @@ import businesscardprogram.domain.Member;
 import java.util.List;
 import java.util.Optional;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@RequiredArgsConstructor
 public class JpaMemberRepository implements MemberRepository {
 
-    private final EntityManager em;
+    @PersistenceContext
+    EntityManager em;
 
     @Override
-    public Member save(Member member) {
-        em.persist(member);
-        return member;
+    public Long save(Member member) {
+        if (member.getId() == null) {
+            em.persist(member);
+        } else {
+            em.merge(member);
+        }
+        return member.getId();
     }
 
     @Override
