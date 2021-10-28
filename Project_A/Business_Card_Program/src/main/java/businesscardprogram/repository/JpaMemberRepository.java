@@ -44,6 +44,7 @@ public class JpaMemberRepository implements MemberRepository {
             .getResultList();
     }
 
+    @Override
     public List<Member> findTop1ByOrderByIdDesc() {
         return em.createQuery("select m from Member m order by m.id DESC", Member.class)
             .setFirstResult(0)

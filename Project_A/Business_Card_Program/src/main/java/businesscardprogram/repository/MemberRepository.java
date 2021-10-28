@@ -13,4 +13,6 @@ public interface MemberRepository {
     List<Member> findByName(String name);
 
     List<Member> findAll();
+
+    List<Member> findTop1ByOrderByIdDesc();
 }
