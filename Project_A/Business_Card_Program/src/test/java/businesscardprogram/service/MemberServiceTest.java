@@ -1,75 +1,86 @@
-/*
 package businesscardprogram.service;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.assertj.core.api.Assertions.*;
 
 import businesscardprogram.domain.Member;
-import java.util.List;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.assertj.core.api.Assertions;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
-class MemberServiceTest {
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@Transactional
+public class MemberServiceTest {
 
-    MemberService memberService;
-    MemoryMemberRepository memberRepository;
-
-    @BeforeEach
-    public void beforeEach(){
-        memberRepository = new MemoryMemberRepository();
-        memberService = new MemberService(memberRepository);
-    }
-
-    @AfterEach
-    public void afterEach() {
-        memberRepository.clearStore();
-    }
+    @Autowired MemberService memberService;
 
     @Test
-    void createCard() {
+    public void 명함생성() throws Exception {
         //given
-        Member member1 = new Member("철수", "01012345678", "Naver");
-
-        Member member2 = new Member("영희", "01012345678", "Naver");
-
-        Member member3 = new Member("영희", "01012345678", "Kakao");
+        Member member = Member.createMember("Peter", "010-4218-5236", "Samsung");
 
         //when
-        Long saveId = memberService.create(member1);
-        memberService.create(member2);
-        memberService.create(member3);
+        Long memberId = memberService.create(member);
 
         //then
-        Member result = memberService.findOne(saveId).orElse(null);
-        assertThat(member1).isEqualTo(result);
+        assertThat(memberService.findOneById(memberId).get().getName()).isEqualTo("Peter");
+        assertThat(memberService.findAllMembers().size()).isEqualTo(1);
     }
 
-    @Test
-    void checkDuplicate() {
+    @Test(expected = IllegalStateException.class)
+    public void 중복예외검사() throws Exception {
         //given
-        Member member1 = new Member("철수", "01012345678", "Naver");
-
-        Member member2 = new Member("영희", "01012345678", "Kakao");
-
-        Member member3 = new Member("철수", "01012345678", "Naver");
+        Member member1 = Member.createMember("Peter", "010-4218-5236", "Samsung");
+        Member member2 = Member.createMember("Katie", "010-4543-2326", "Kakao");
+        Member member3 = Member.createMember("Katie", "010-4543-2326", "Kakao");
 
         //when
         memberService.create(member1);
         memberService.create(member2);
-        IllegalStateException e = assertThrows(IllegalStateException.class,
-            () -> memberService.create(member3));
-        assertThat(e.getMessage()).isEqualTo("이미 제작 진행 중입니다");
+
+        //then
+        memberService.create(member3);
     }
 
     @Test
-    void findMembers() {
+    public void 전체조회() throws Exception {
         //given
-        Member member1 = new Member("철수", "01012345678", "Naver");
+        Member member1 = Member.createMember("Peter", "010-4218-5236", "Samsung");
+        Member member2 = Member.createMember("Katie", "010-4543-2326", "Kakao");
 
-        Member member2 = new Member("영희", "01012345678", "Kakao");
+        //when
+        memberService.create(member1);
+        memberService.create(member2);
 
-        Member member3 = new Member("철수", "01012345678", "Kakao");
+        //then
+        assertThat(memberService.findAllMembers().size()).isEqualTo(2);
+    }
+    
+    @Test
+    public void 아이디로찾기() throws Exception {
+        //given
+        Member member1 = Member.createMember("Peter", "010-4218-5236", "Samsung");
+        Member member2 = Member.createMember("Katie", "010-4543-2326", "Kakao");
+        
+        //when
+        memberService.create(member1);
+        Long findMemberId = memberService.create(member2);
+
+        //then
+        assertThat(memberService.findOneById(findMemberId).get().getName()).isEqualTo(
+            member2.getName());
+    }
+    
+    @Test
+    public void 이름으로조회() throws Exception {
+        //given
+        Member member1 = Member.createMember("Peter", "010-4218-5236", "Samsung");
+        Member member2 = Member.createMember("Katie", "010-4543-2326", "Kakao");
+        Member member3 = Member.createMember("Peter", "010-2324-6443", "Naver");
 
         //when
         memberService.create(member1);
@@ -77,9 +88,6 @@ class MemberServiceTest {
         memberService.create(member3);
 
         //then
-        List<Member> result = memberService.findMembers();
-
-        assertThat(result.size()).isEqualTo(3);
+        assertThat(memberService.findMembersByName("Peter").size()).isEqualTo(2);
     }
 }
-*/
