@@ -1,3 +1,4 @@
+/*
 package businesscardprogram.service;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -75,3 +76,4 @@ class MemberServiceIntegrationTest {
         assertThat(result.size()).isEqualTo(3);
     }
 }
+*/

@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -42,6 +41,13 @@ public class JpaMemberRepository implements MemberRepository {
     @Override
     public List<Member> findAll() {
         return em.createQuery("select m from Member m", Member.class)
+            .getResultList();
+    }
+
+    public List<Member> findTop1ByOrderByIdDesc() {
+        return em.createQuery("select m from Member m order by m.id DESC", Member.class)
+            .setFirstResult(0)
+            .setMaxResults(1)
             .getResultList();
     }
 }
