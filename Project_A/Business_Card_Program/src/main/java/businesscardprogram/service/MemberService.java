@@ -4,44 +4,44 @@ import businesscardprogram.domain.Member;
 import businesscardprogram.repository.MemberRepository;
 import java.util.List;
 import java.util.Optional;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-@Transactional
+@Service
+@Transactional(readOnly = true)
+@RequiredArgsConstructor
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    public MemberService(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
-    }
-
-    //회원 가입
+    @Transactional
     public Long create(Member member) {
-        //같은 이름, 전화번호, 회사를 가진 중복 회원 X
-        validateDuplicateMember(member);
-        memberRepository.save(member);
-        return member.getId();
+        // 가장 최근 제작 신청한 사람과 중복되는지 검사
+        if (memberRepository.findAll().size() != 0) {
+            validateDuplicateMember(member);
+        }
+        Long savedId = memberRepository.save(member);
+        return savedId;
     }
 
     private void validateDuplicateMember(Member member) {
-        memberRepository.findByName(member.getName())
-            .filter(m -> m.getNumber().equals(member.getNumber()) && m.getCompany()
-                .equals(member.getCompany()))
-            .ifPresent(m -> {
-                throw new IllegalStateException("이미 제작 진행 중입니다");
-            });
+        Member lastMember = memberRepository.findTop1ByOrderByIdDesc().get(0);
+        if (lastMember.getName().equals(member.getName()) && lastMember.getNumber()
+            .equals(member.getNumber()) && lastMember.getCompany().equals(member.getCompany())) {
+            throw new IllegalStateException("이미 제작 진행 중입니다");
+        }
     }
 
-    public List<Member> findMembers() {
+    public List<Member> findAllMembers() {
         return memberRepository.findAll();
     }
 
-    public Optional<Member> findOne(Long memberId) {
+    public Optional<Member> findOneById(Long memberId) {
         return memberRepository.findById(memberId);
     }
 
-    @Transactional
-    public Optional<Member> searchMembers(String name) {
+    public List<Member> findMembersByName(String name) {
         return memberRepository.findByName(name);
     }
 }
