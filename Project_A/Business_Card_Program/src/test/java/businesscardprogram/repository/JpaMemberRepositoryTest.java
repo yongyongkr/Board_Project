@@ -3,7 +3,6 @@ package businesscardprogram.repository;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import businesscardprogram.domain.Member;
-import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class JpaMemberRepositoryTest {
 
     @Autowired
-    JpaMemberRepository jpaMemberRepository;
+    MemberRepository memberRepository;
 
     @Test
     public void 저장() throws Exception {
@@ -25,10 +24,10 @@ public class JpaMemberRepositoryTest {
         Member member = Member.createMember("Peter", "010-4218-5236", "Samsung");
 
         //when
-        jpaMemberRepository.save(member);
+        memberRepository.save(member);
 
         //then
-        assertThat(jpaMemberRepository.findAll().size()).isEqualTo(1);
+        assertThat(memberRepository.findAll().size()).isEqualTo(1);
     }
 
     @Test
@@ -38,12 +37,12 @@ public class JpaMemberRepositoryTest {
         Member member2 = Member.createMember("Katie", "010-4543-2326", "Kakao");
 
         //when
-        jpaMemberRepository.save(member1);
-        jpaMemberRepository.save(member2);
+        memberRepository.save(member1);
+        memberRepository.save(member2);
 
         //then
         Long findMemberId = member1.getId();
-        assertThat(jpaMemberRepository.findById(findMemberId).get().getName()).isEqualTo(
+        assertThat(memberRepository.findById(findMemberId).get().getName()).isEqualTo(
             member1.getName());
     }
 
@@ -55,12 +54,12 @@ public class JpaMemberRepositoryTest {
         Member member3 = Member.createMember("Katie", "010-4543-2326", "Kakao");
 
         //when
-        jpaMemberRepository.save(member1);
-        jpaMemberRepository.save(member2);
-        jpaMemberRepository.save(member3);
+        memberRepository.save(member1);
+        memberRepository.save(member2);
+        memberRepository.save(member3);
 
         //then
-        assertThat(jpaMemberRepository.findByName("Peter").size()).isEqualTo(2);
+        assertThat(memberRepository.findByName("Peter").size()).isEqualTo(2);
     }
 
     @Test
@@ -71,12 +70,12 @@ public class JpaMemberRepositoryTest {
         Member member3 = Member.createMember("Katie", "010-4543-2326", "Kakao");
 
         //when
-        jpaMemberRepository.save(member1);
-        jpaMemberRepository.save(member2);
-        jpaMemberRepository.save(member3);
+        memberRepository.save(member1);
+        memberRepository.save(member2);
+        memberRepository.save(member3);
 
         //then
-        assertThat(jpaMemberRepository.findAll().size()).isEqualTo(3);
+        assertThat(memberRepository.findAll().size()).isEqualTo(3);
     }
 
     @Test
@@ -87,12 +86,12 @@ public class JpaMemberRepositoryTest {
         Member member3 = Member.createMember("Katie", "010-4543-2326", "Kakao");
 
         //when
-        jpaMemberRepository.save(member1);
-        jpaMemberRepository.save(member2);
-        Long lastId = jpaMemberRepository.save(member3);
+        memberRepository.save(member1);
+        memberRepository.save(member2);
+        Long lastId = memberRepository.save(member3);
 
         //then
-        Member lastMember = jpaMemberRepository.findTop1ByOrderByIdDesc().get(0);
+        Member lastMember = memberRepository.findTop1ByOrderByIdDesc().get(0);
         assertThat(lastMember.getId()).isEqualTo(lastId);
     }
 }
