@@ -1,3 +1,4 @@
+/*
 package project.b.guest.book.controller;
 
 import lombok.Data;
@@ -12,3 +13,4 @@ public class ArticleForm {
     private String name;
     private String context;
 }
+*/

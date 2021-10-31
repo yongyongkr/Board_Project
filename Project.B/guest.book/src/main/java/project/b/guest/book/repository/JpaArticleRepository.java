@@ -1,3 +1,4 @@
+/*
 package project.b.guest.book.repository;
 
 import java.util.List;
@@ -74,3 +75,4 @@ public class JpaArticleRepository implements ArticleRepository {
     }
 }
 
+*/

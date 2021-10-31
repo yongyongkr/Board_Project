@@ -1,3 +1,4 @@
+/*
 package project.b.guest.book.controller;
 
 import org.springframework.stereotype.Controller;
@@ -13,3 +14,4 @@ public class HelloController {
     }
 
 }
+*/

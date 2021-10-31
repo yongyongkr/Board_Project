@@ -1,3 +1,4 @@
+/*
 package project.b.guest.book.repository;
 
 import java.awt.Robot;
@@ -30,3 +31,4 @@ public interface ArticleRepository {
         robot.delay(delaySec * 1000);
     }
 }
+*/

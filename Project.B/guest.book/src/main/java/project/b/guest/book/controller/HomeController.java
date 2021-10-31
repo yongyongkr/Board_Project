@@ -1,3 +1,4 @@
+/*
 package project.b.guest.book.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,3 +35,4 @@ public class HomeController {
     }
 
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package project.b.guest.book.repository;
 
 import java.util.List;
@@ -64,4 +65,4 @@ class JpaArticleRepositoryTest {
     @Test
     void validateTime() {
     }
-}
+}*/

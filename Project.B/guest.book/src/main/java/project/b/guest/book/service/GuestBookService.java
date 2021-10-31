@@ -1,3 +1,4 @@
+/*
 package project.b.guest.book.service;
 
 import java.util.List;
@@ -33,4 +34,4 @@ public class GuestBookService {
     public void dislikes(Long id) {
         articleRepository.minus(id);
     }
-}
+}*/
