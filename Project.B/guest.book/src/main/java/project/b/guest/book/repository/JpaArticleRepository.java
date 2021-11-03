@@ -27,6 +27,7 @@ public class JpaArticleRepository implements ArticleRepository {
     @Override
     public List<Article> findByName(String name) {
         return em.createQuery("select a from Article a where a.username = :name")
+            .setParameter("name", name)
             .getResultList();
     }
 
@@ -42,12 +43,14 @@ public class JpaArticleRepository implements ArticleRepository {
 
     @Override
     public void plus(Long id) {
-        em.createQuery("update Article set likes = likes + 1 where id = :id");
+        em.createQuery("update Article set likes = likes + 1 where id = :id")
+            .setParameter("id", id);
     }
 
     @Override
     public void minus(Long id) {
-        em.createQuery("update Article set dislikes = dislikes + 1 where id = :id");
+        em.createQuery("update Article set dislikes = dislikes + 1 where id = :id")
+            .setParameter("id", id);
     }
 }
 
