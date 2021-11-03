@@ -11,7 +11,7 @@ public interface ArticleRepository {
 
     Optional<Article> findById(Long id);
 
-    Optional<Long> findByName(String name);
+    Optional<Article> findByName(String name);
 
     List<Article> findAll();
 
