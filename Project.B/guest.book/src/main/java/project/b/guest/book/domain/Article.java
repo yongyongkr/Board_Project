@@ -1,6 +1,7 @@
 package project.b.guest.book.domain;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,8 +22,8 @@ public class Article {
     private String title;
     private String username;
     private String content;
-    private Timestamp uploadTime;
-    private Timestamp updateTime;
+    private LocalDateTime createTime;
+    private LocalDateTime lastModifiedTime;
     private int likes;
     private int dislikes;
 
