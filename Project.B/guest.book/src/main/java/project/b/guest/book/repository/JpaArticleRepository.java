@@ -25,8 +25,9 @@ public class JpaArticleRepository implements ArticleRepository {
     }
 
     @Override
-    public Optional<Article> findByName(String name) {
-        return em.createQuery("select a from Article a where ");
+    public List<Article> findByName(String name) {
+        return em.createQuery("select a from Article a where a.username = :name")
+            .getResultList();
     }
 
     @Override
@@ -47,28 +48,6 @@ public class JpaArticleRepository implements ArticleRepository {
     @Override
     public void minus(Long id) {
         em.createQuery("update Article set dislikes = dislikes + 1 where id = :id");
-    }
-
-    @Override
-    public boolean existOrNot(Article article) {
-        try {
-            em.createQuery("select a from Article a where a.name = :name")
-                .setParameter("name", article.getName());
-        } catch (Exception e) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int validateTime(Article article) {
-        if (existOrNot(article)) {
-            Long lastTime = findByName(article.getName()).get();
-            return em.createQuery(
-                "select timestampdiff(second, :lastTime, article.getTime)").getFirstResult();
-        } else {
-            return 0;
-        }
     }
 }
 
