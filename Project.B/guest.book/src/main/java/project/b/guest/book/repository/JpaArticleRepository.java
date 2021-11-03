@@ -1,35 +1,32 @@
-/*
 package project.b.guest.book.repository;
 
 import java.util.List;
 import java.util.Optional;
 import javax.persistence.EntityManager;
-import project.b.guest.book.article.Article;
+import javax.persistence.PersistenceContext;
+import org.springframework.stereotype.Repository;
+import project.b.guest.book.domain.Article;
 
+@Repository
 public class JpaArticleRepository implements ArticleRepository {
 
-    private final EntityManager em;
-
-    public JpaArticleRepository(EntityManager em) {
-        this.em = em;
-    }
+    @PersistenceContext
+    EntityManager em;
 
     @Override
-    public void save(Article article) {
+    public Long save(Article article) {
         em.persist(article);
+        return article.getId();
     }
 
     @Override
     public Optional<Article> findById(Long id) {
-        return Optional.ofNullable(
-            em.createQuery("select a from Article a where a.id = :id", Article.class)
-                .getSingleResult());
+        return Optional.ofNullable(em.find(Article.class, id));
     }
 
     @Override
-    public Optional<Long> findByName(String name) {
-        return em.createQuery("select max(a.time) from Article a where a.name = :name")
-            .getResultStream().findFirst();
+    public Optional<Article> findByName(String name) {
+        return em.createQuery("select a from Article a where ");
     }
 
     @Override
@@ -75,4 +72,3 @@ public class JpaArticleRepository implements ArticleRepository {
     }
 }
 
-*/
