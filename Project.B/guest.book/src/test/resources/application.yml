@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/board
+    url: jdbc:h2:tcp://localhost/~/boardtest
     driver-class-name: org.h2.Driver
     username: sa
 
@@ -11,3 +11,4 @@ spring:
     hibernate:
       ddl-auto: create
       format_sql: true
+      show_sql: true
