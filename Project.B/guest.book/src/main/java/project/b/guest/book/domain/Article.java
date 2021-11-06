@@ -24,8 +24,6 @@ public class Article {
     private String content;
     private LocalDateTime createTime;
     private LocalDateTime lastModifiedTime;
-    private int likes;
-    private int dislikes;
 
     protected Article(String title, String username, String content) {
         this.title = title;

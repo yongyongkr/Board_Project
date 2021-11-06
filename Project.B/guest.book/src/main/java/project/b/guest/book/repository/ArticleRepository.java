@@ -15,8 +15,4 @@ public interface ArticleRepository {
     List<Article> findAll();
 
     void delete(Long id);
-
-    void plus(Long id);
-
-    void minus(Long id);
 }
