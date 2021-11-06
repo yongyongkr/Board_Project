@@ -3,14 +3,13 @@ package project.b.guest.book.repository;
 import static org.assertj.core.api.Assertions.*;
 
 import java.util.List;
-import java.util.Optional;
-import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import project.b.guest.book.domain.Article;
 
@@ -23,42 +22,31 @@ class JpaArticleRepositoryTest {
     ArticleRepository jpaArticleRepository;
 
     @Test
-    void save() {
+    void 저장_및_전체조회() {
         //given
-        Article article = Article.createArticle("후라이 만드는법", "철수", "후라이팬에 기름을 두르고 굽는다");
-
-        //when
-        jpaArticleRepository.save(article);
+        saveThreeArticle();
 
         //then
-        assertThat(jpaArticleRepository.findAll().size()).isEqualTo(1);
+        assertThat(jpaArticleRepository.findAll().size()).isEqualTo(3);
     }
 
     @Test
-    void findById() {
+    void 아이디로_조회() {
         //given
-        Article article = Article.createArticle("후라이 만드는법", "철수", "후라이팬에 기름을 두르고 굽는다");
+        Long saveId = saveOneArticleAndGetId();
 
         //when
-        jpaArticleRepository.save(article);
-        Article findArticle = jpaArticleRepository.findById(article.getId()).get();
+        Article findArticle = jpaArticleRepository.findById(saveId).get();
 
         //then
-        assertThat(findArticle.getId()).isEqualTo(article.getId());
-        assertThat(findArticle.getContent()).isEqualTo(article.getContent());
+        assertThat(findArticle.getTitle()).isEqualTo("아이디 추출용");
+        assertThat(findArticle.getUsername()).isEqualTo("지석");
     }
 
     @Test
-    void findByName() {
+    void 이름으로_조회() {
         //given
-        Article article1 = Article.createArticle("후라이 만드는법", "철수", "후라이팬에 기름을 두르고 굽는다");
-        Article article2 = Article.createArticle("일기", "영희", "오늘 날씨 맑음");
-        Article article3 = Article.createArticle("밥 먹을 사람?", "철수", "10분 뒤에 우리집으로");
-
-        //when
-        jpaArticleRepository.save(article1);
-        jpaArticleRepository.save(article2);
-        jpaArticleRepository.save(article3);
+        saveThreeArticle();
 
         //then
         assertThat(jpaArticleRepository.findByName("철수").size()).isEqualTo(2);
@@ -66,28 +54,30 @@ class JpaArticleRepositoryTest {
     }
 
     @Test
-    void findAll() {
-        List<Article> articleList = jpaArticleRepository.findAll();
-        System.out.println("articleList = " + articleList);
+    void 삭제() {
+        //given
+        Long saveId = saveOneArticleAndGetId();
+        assertThat(jpaArticleRepository.findAll().size()).isEqualTo(1);
+
+        //when
+        jpaArticleRepository.delete(saveId);
+
+        //then
+        assertThat(jpaArticleRepository.findAll().size()).isEqualTo(0);
     }
 
-    @Test
-    void delete() {
+    private void saveThreeArticle() {
+        Article article1 = Article.createArticle("후라이 만드는법", "철수", "후라이팬에 기름을 두르고 굽는다");
+        Article article2 = Article.createArticle("일기", "영희", "오늘 날씨 맑음");
+        Article article3 = Article.createArticle("밥 먹을 사람?", "철수", "10분 뒤에 우리집으로");
+
+        jpaArticleRepository.save(article1);
+        jpaArticleRepository.save(article2);
+        jpaArticleRepository.save(article3);
     }
 
-    @Test
-    void plus() {
-    }
-
-    @Test
-    void minus() {
-    }
-
-    @Test
-    void existOrNot() {
-    }
-
-    @Test
-    void validateTime() {
+    private Long saveOneArticleAndGetId() {
+        Article article = Article.createArticle("아이디 추출용", "지석", "id 값이 필요합니다");
+        return jpaArticleRepository.save(article);
     }
 }
