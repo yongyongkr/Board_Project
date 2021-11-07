@@ -1,14 +1,14 @@
-package project.b.guest.book.repository;
+package boardprogram.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import boardprogram.domain.Article;
 import javax.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import project.b.guest.book.domain.Article;
 
 @Transactional
 @RunWith(SpringRunner.class)

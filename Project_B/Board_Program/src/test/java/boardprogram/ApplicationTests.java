@@ -1,4 +1,4 @@
-package project.b.guest.book;
+package boardprogram;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package project.b.guest.book.domain;
+package boardprogram.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

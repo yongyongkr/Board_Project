@@ -1,12 +1,11 @@
-package project.b.guest.book.repository;
+package boardprogram.repository;
 
+import boardprogram.domain.Article;
 import java.util.List;
 import java.util.Optional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
-import project.b.guest.book.domain.Article;
 
 @Repository
 public class JpaArticleRepository implements ArticleRepository {

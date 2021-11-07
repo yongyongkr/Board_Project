@@ -1,5 +1,5 @@
 /*
-package project.b.guest.book.service;
+package boardprogram.service;
 
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -7,7 +7,7 @@ import javax.transaction.Transactional;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import project.b.guest.book.article.Article;
-import project.b.guest.book.repository.JpaArticleRepository;
+import boardprogram.repository.JpaArticleRepository;
 
 @Transactional
 class GuestBookServiceTest {

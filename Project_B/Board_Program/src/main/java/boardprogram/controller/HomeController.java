@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import project.b.guest.book.article.Article;
-import project.b.guest.book.service.GuestBookService;
+import boardprogram.service.GuestBookService;
 
 @Controller
 public class HomeController {

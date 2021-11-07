@@ -1,9 +1,9 @@
 /*
-package project.b.guest.book.service;
+package boardprogram.service;
 
 import java.util.List;
 import project.b.guest.book.article.Article;
-import project.b.guest.book.repository.ArticleRepository;
+import boardprogram.repository.ArticleRepository;
 
 public class GuestBookService {
 

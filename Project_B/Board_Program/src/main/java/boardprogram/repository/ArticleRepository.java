@@ -1,8 +1,8 @@
-package project.b.guest.book.repository;
+package boardprogram.repository;
 
+import boardprogram.domain.Article;
 import java.util.List;
 import java.util.Optional;
-import project.b.guest.book.domain.Article;
 
 public interface ArticleRepository {
 
