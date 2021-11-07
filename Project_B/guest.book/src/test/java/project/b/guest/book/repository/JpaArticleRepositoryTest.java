@@ -1,15 +1,12 @@
 package project.b.guest.book.repository;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.List;
 import javax.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Commit;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import project.b.guest.book.domain.Article;
 
@@ -19,7 +16,7 @@ import project.b.guest.book.domain.Article;
 class JpaArticleRepositoryTest {
 
     @Autowired
-    ArticleRepository jpaArticleRepository;
+    ArticleRepository articleRepository;
 
     @Test
     void 저장_및_전체조회() {
@@ -27,7 +24,7 @@ class JpaArticleRepositoryTest {
         saveThreeArticle();
 
         //then
-        assertThat(jpaArticleRepository.findAll().size()).isEqualTo(3);
+        assertThat(articleRepository.findAll().size()).isEqualTo(3);
     }
 
     @Test
@@ -36,7 +33,7 @@ class JpaArticleRepositoryTest {
         Long saveId = saveOneArticleAndGetId();
 
         //when
-        Article findArticle = jpaArticleRepository.findById(saveId).get();
+        Article findArticle = articleRepository.findById(saveId).get();
 
         //then
         assertThat(findArticle.getTitle()).isEqualTo("아이디 추출용");
@@ -49,21 +46,21 @@ class JpaArticleRepositoryTest {
         saveThreeArticle();
 
         //then
-        assertThat(jpaArticleRepository.findByName("철수").size()).isEqualTo(2);
-        assertThat(jpaArticleRepository.findByName("영희").size()).isEqualTo(1);
+        assertThat(articleRepository.findByName("철수").size()).isEqualTo(2);
+        assertThat(articleRepository.findByName("영희").size()).isEqualTo(1);
     }
 
     @Test
     void 삭제() {
         //given
         Long saveId = saveOneArticleAndGetId();
-        assertThat(jpaArticleRepository.findAll().size()).isEqualTo(1);
+        assertThat(articleRepository.findAll().size()).isEqualTo(1);
 
         //when
-        jpaArticleRepository.delete(saveId);
+        articleRepository.delete(saveId);
 
         //then
-        assertThat(jpaArticleRepository.findAll().size()).isEqualTo(0);
+        assertThat(articleRepository.findAll().size()).isEqualTo(0);
     }
 
     private void saveThreeArticle() {
@@ -71,13 +68,13 @@ class JpaArticleRepositoryTest {
         Article article2 = Article.createArticle("일기", "영희", "오늘 날씨 맑음");
         Article article3 = Article.createArticle("밥 먹을 사람?", "철수", "10분 뒤에 우리집으로");
 
-        jpaArticleRepository.save(article1);
-        jpaArticleRepository.save(article2);
-        jpaArticleRepository.save(article3);
+        articleRepository.save(article1);
+        articleRepository.save(article2);
+        articleRepository.save(article3);
     }
 
     private Long saveOneArticleAndGetId() {
         Article article = Article.createArticle("아이디 추출용", "지석", "id 값이 필요합니다");
-        return jpaArticleRepository.save(article);
+        return articleRepository.save(article);
     }
 }
