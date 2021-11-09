@@ -35,9 +35,6 @@ public class Article {
     private LocalDateTime createTime;
     private LocalDateTime lastModifiedTime;
 
-    @OneToMany(mappedby = article)
-    private List<Comment> comments = new ArrayList<>();
-
     protected Article(String title, String username, String content) {
         this.title = title;
         this.username = username;

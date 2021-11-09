@@ -39,6 +39,10 @@ public class Comment {
     @JoinColumn(name = "article_id")
     private Article article;
 
+    public void setArticle(Article article) {
+        this.article = article;
+    }
+
     protected Comment(String username, String content) {
         this.username = username;
         this.content = content;
