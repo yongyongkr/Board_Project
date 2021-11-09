@@ -19,6 +19,8 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
+    private String username;
+
     @Lob
     private String content;
 
@@ -28,14 +30,15 @@ public class Comment {
     private LocalDateTime createTime;
     private LocalDateTime lastModifiedTime;
 
-    protected Comment(String content) {
+    protected Comment(String username, String content) {
+        this.username = username;
         this.content = content;
         this.likes = 0;
         this.dislikes = 0;
     }
 
-    public static Comment createComment(String content) {
-        Comment comment = new Comment(content);
+    public static Comment createComment(String username, String content) {
+        Comment comment = new Comment(username, content);
         return comment;
     }
 }
