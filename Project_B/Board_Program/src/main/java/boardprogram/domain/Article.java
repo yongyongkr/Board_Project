@@ -1,11 +1,15 @@
 package boardprogram.domain;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,6 +21,7 @@ public class Article {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "article_id")
     private Long id;
 
     private String title;
@@ -29,6 +34,9 @@ public class Article {
     private Integer dislikes;
     private LocalDateTime createTime;
     private LocalDateTime lastModifiedTime;
+
+    @OneToMany(mappedby = article)
+    private List<Comment> comments = new ArrayList<>();
 
     protected Article(String title, String username, String content) {
         this.title = title;
