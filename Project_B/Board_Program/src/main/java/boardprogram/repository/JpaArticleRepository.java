@@ -42,5 +42,21 @@ public class JpaArticleRepository implements ArticleRepository {
             .setParameter("id", articleId)
             .executeUpdate();
     }
+
+    @Override
+    public void plus(Long articleId) {
+        em.createQuery("update Article a set a.likes = a.likes + 1 where a.id = :id")
+            .setParameter("id", articleId)
+            .executeUpdate();
+        em.clear();
+    }
+
+    @Override
+    public void minus(Long articleId) {
+        em.createQuery("update Article a set a.dislikes = a.dislikes + 1 where a.id = :id")
+            .setParameter("id", articleId)
+            .executeUpdate();
+        em.clear();
+    }
 }
 
