@@ -28,12 +28,13 @@ class JpaArticleRepositoryTest {
     }
 
     @Test
-    void 아이디로_조회() {
+    void 아이디로_조회() throws Exception {
         //given
         Long saveId = saveOneArticleAndGetId();
 
         //when
-        Article findArticle = articleRepository.findById(saveId).get();
+        Article findArticle = articleRepository.findById(saveId)
+            .orElseThrow(() -> new Exception("cannot find"));
 
         //then
         assertThat(findArticle.getTitle()).isEqualTo("아이디 추출용");
@@ -67,12 +68,14 @@ class JpaArticleRepositoryTest {
     public void 좋아요() throws Exception {
         //given
         Long savedId = saveOneArticleAndGetId();
-        Article findArticle = articleRepository.findById(savedId).get();
+        Article findArticle = articleRepository.findById(savedId)
+            .orElseThrow(() -> new Exception("cannot find"));
         assertThat(findArticle.getLikes()).isEqualTo(0);
 
         //when
         articleRepository.plus(savedId);
-        Article updateArticle = articleRepository.findById(savedId).get();
+        Article updateArticle = articleRepository.findById(savedId)
+            .orElseThrow(() -> new Exception("cannot find"));
 
         //then
         assertThat(updateArticle.getLikes()).isEqualTo(1);
@@ -82,12 +85,14 @@ class JpaArticleRepositoryTest {
     public void 싫어요() throws Exception {
         //given
         Long savedId = saveOneArticleAndGetId();
-        Article findArticle = articleRepository.findById(savedId).get();
+        Article findArticle = articleRepository.findById(savedId)
+            .orElseThrow(() -> new Exception("cannot find"));
         assertThat(findArticle.getDislikes()).isEqualTo(0);
 
         //when
         articleRepository.minus(savedId);
-        Article updateArticle = articleRepository.findById(savedId).get();
+        Article updateArticle = articleRepository.findById(savedId)
+            .orElseThrow(() -> new Exception("cannot find"));
 
         //then
         assertThat(updateArticle.getDislikes()).isEqualTo(1);
