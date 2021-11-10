@@ -40,14 +40,14 @@ public class JpaCommentRepository implements CommentRepository {
 
     @Override
     public void delete(Long commentId) {
-        em.createQuery("delete from Comment c where c.id = :id", Comment.class)
+        em.createQuery("delete from Comment c where c.id = :id")
             .setParameter("id", commentId)
             .executeUpdate();
     }
 
     @Override
     public void plus(Long commentId) {
-        em.createQuery("update Comment c set c.likes = c.likes + 1 where c.id = :id", Comment.class)
+        em.createQuery("update Comment c set c.likes = c.likes + 1 where c.id = :id")
             .setParameter("id", commentId)
             .executeUpdate();
         em.clear();
@@ -55,8 +55,7 @@ public class JpaCommentRepository implements CommentRepository {
 
     @Override
     public void minus(Long commentId) {
-        em.createQuery("update Comment c set c.dislikes = c.dislikes + 1 where c.id = :id",
-                Comment.class)
+        em.createQuery("update Comment c set c.dislikes = c.dislikes + 1 where c.id = :id")
             .setParameter("id", commentId)
             .executeUpdate();
         em.clear();

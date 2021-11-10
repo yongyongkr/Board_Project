@@ -38,14 +38,14 @@ public class JpaArticleRepository implements ArticleRepository {
 
     @Override
     public void delete(Long articleId) {
-        em.createQuery("delete from Article a where a.id = :id", Article.class)
+        em.createQuery("delete from Article a where a.id = :id")
             .setParameter("id", articleId)
             .executeUpdate();
     }
 
     @Override
     public void plus(Long articleId) {
-        em.createQuery("update Article a set a.likes = a.likes + 1 where a.id = :id", Article.class)
+        em.createQuery("update Article a set a.likes = a.likes + 1 where a.id = :id")
             .setParameter("id", articleId)
             .executeUpdate();
         em.clear();
@@ -53,7 +53,7 @@ public class JpaArticleRepository implements ArticleRepository {
 
     @Override
     public void minus(Long articleId) {
-        em.createQuery("update Article a set a.dislikes = a.dislikes + 1 where a.id = :id", Article.class)
+        em.createQuery("update Article a set a.dislikes = a.dislikes + 1 where a.id = :id")
             .setParameter("id", articleId)
             .executeUpdate();
         em.clear();
