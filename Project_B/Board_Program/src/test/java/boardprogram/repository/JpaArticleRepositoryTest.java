@@ -3,6 +3,7 @@ package boardprogram.repository;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import boardprogram.domain.Article;
+import boardprogram.domain.Comment;
 import javax.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -17,6 +18,8 @@ class JpaArticleRepositoryTest {
 
     @Autowired
     ArticleRepository articleRepository;
+    @Autowired
+    CommentRepository commentRepository;
 
     @Test
     void 저장_및_전체조회() {
@@ -62,6 +65,19 @@ class JpaArticleRepositoryTest {
 
         //then
         assertThat(articleRepository.findAll().size()).isEqualTo(0);
+    }
+
+    @Test
+    public void 댓글까지_삭제() throws Exception {
+        //given
+        Long articleId = saveOneCommentAndGetArticleId();
+
+        //when
+        articleRepository.delete(articleId);
+
+        //then
+        assertThat(articleRepository.findAll().size()).isEqualTo(0);
+        assertThat(commentRepository.findAll().size()).isEqualTo(0);
     }
 
     @Test
@@ -111,5 +127,14 @@ class JpaArticleRepositoryTest {
     private Long saveOneArticleAndGetId() {
         Article article = Article.createArticle("아이디 추출용", "지석", "id 값이 필요합니다");
         return articleRepository.save(article);
+    }
+
+    private Long saveOneCommentAndGetArticleId() {
+        Article article = Article.createArticle("아이디 추출용", "지석", "id 값이 필요합니다");
+        Long articleId = articleRepository.save(article);
+
+        Comment rootComment = Comment.createRootComment(article, "철수", "좋은 글 감사합니다");
+        commentRepository.save(rootComment);
+        return articleId;
     }
 }
