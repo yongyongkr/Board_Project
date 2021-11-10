@@ -72,7 +72,8 @@ public class Comment extends BaseTimeEntity {
         return comment;
     }
 
-    public static Comment createLeafComment(Article article, Comment parent, String username, String content) {
+    public static Comment createLeafComment(Article article, Comment parent, String username,
+        String content) {
         Comment comment = new Comment(username, content);
         comment.setArticle(article);
         comment.setCommentRelation(parent);

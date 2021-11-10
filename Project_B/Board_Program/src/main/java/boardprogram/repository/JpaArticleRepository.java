@@ -38,9 +38,13 @@ public class JpaArticleRepository implements ArticleRepository {
 
     @Override
     public void delete(Long articleId) {
+        em.createQuery("delete from Comment c where c.article.id = :id")
+            .setParameter("id", articleId)
+            .executeUpdate();
         em.createQuery("delete from Article a where a.id = :id")
             .setParameter("id", articleId)
             .executeUpdate();
+        em.clear();
     }
 
     @Override
