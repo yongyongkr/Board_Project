@@ -15,4 +15,8 @@ public interface CommentRepository {
     List<Comment> findAll();
 
     void delete(Long id);
+
+    void plus(Long id);
+
+    void minus(Long id);
 }

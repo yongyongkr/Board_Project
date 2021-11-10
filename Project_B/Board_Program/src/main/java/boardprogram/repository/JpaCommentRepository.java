@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Optional;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class JpaCommentRepository implements CommentRepository {
 
     @PersistenceContext
@@ -24,7 +26,9 @@ public class JpaCommentRepository implements CommentRepository {
 
     @Override
     public List<Comment> findByArticle(Long articleId) {
-        return em.createQuery("select c from Comment c where c.article.id = :id order by c.createTime desc")
+        return em.createQuery(
+                "select c from Comment c where c.article.id = :id order by c.createTime desc",
+                Comment.class)
             .setParameter("id", articleId)
             .getResultList();
     }
@@ -36,8 +40,25 @@ public class JpaCommentRepository implements CommentRepository {
 
     @Override
     public void delete(Long commentId) {
-        em.createQuery("delete from Comment c where c.id = :id")
+        em.createQuery("delete from Comment c where c.id = :id", Comment.class)
             .setParameter("id", commentId)
             .executeUpdate();
+    }
+
+    @Override
+    public void plus(Long commentId) {
+        em.createQuery("update Comment c set c.likes = c.likes + 1 where c.id = :id", Comment.class)
+            .setParameter("id", commentId)
+            .executeUpdate();
+        em.clear();
+    }
+
+    @Override
+    public void minus(Long commentId) {
+        em.createQuery("update Comment c set c.dislikes = c.dislikes + 1 where c.id = :id",
+                Comment.class)
+            .setParameter("id", commentId)
+            .executeUpdate();
+        em.clear();
     }
 }
