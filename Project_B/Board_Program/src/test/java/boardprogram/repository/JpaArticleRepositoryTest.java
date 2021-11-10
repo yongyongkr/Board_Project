@@ -63,6 +63,36 @@ class JpaArticleRepositoryTest {
         assertThat(articleRepository.findAll().size()).isEqualTo(0);
     }
 
+    @Test
+    public void 좋아요() throws Exception {
+        //given
+        Long savedId = saveOneArticleAndGetId();
+        Article findArticle = articleRepository.findById(savedId).get();
+        assertThat(findArticle.getLikes()).isEqualTo(0);
+
+        //when
+        articleRepository.plus(savedId);
+        Article updateArticle = articleRepository.findById(savedId).get();
+
+        //then
+        assertThat(updateArticle.getLikes()).isEqualTo(1);
+    }
+
+    @Test
+    public void 싫어요() throws Exception {
+        //given
+        Long savedId = saveOneArticleAndGetId();
+        Article findArticle = articleRepository.findById(savedId).get();
+        assertThat(findArticle.getDislikes()).isEqualTo(0);
+
+        //when
+        articleRepository.minus(savedId);
+        Article updateArticle = articleRepository.findById(savedId).get();
+
+        //then
+        assertThat(updateArticle.getDislikes()).isEqualTo(1);
+    }
+
     private void saveThreeArticle() {
         Article article1 = Article.createArticle("후라이 만드는법", "철수", "후라이팬에 기름을 두르고 굽는다");
         Article article2 = Article.createArticle("일기", "영희", "오늘 날씨 맑음");
