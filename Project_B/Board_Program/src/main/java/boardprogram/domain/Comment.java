@@ -66,12 +66,15 @@ public class Comment extends BaseTimeEntity {
         this.dislikes = 0;
     }
 
-    public static Comment createRootComment(String username, String content) {
-        return new Comment(username, content);
+    public static Comment createRootComment(Article article, String username, String content) {
+        Comment comment = new Comment(username, content);
+        comment.setArticle(article);
+        return comment;
     }
 
-    public static Comment createLeafComment(Comment parent, String username, String content) {
+    public static Comment createLeafComment(Article article, Comment parent, String username, String content) {
         Comment comment = new Comment(username, content);
+        comment.setArticle(article);
         comment.setCommentRelation(parent);
         return comment;
     }
