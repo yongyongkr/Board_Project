@@ -40,9 +40,11 @@ public class JpaCommentRepository implements CommentRepository {
 
     @Override
     public void delete(Long commentId) {
-        em.createQuery("delete from Comment c where c.id = :id")
+        em.createQuery("update Comment c set c.content = :content where c.id = :id")
+            .setParameter("content", "삭제된 댓글입니다")
             .setParameter("id", commentId)
             .executeUpdate();
+        em.clear();
     }
 
     @Override
