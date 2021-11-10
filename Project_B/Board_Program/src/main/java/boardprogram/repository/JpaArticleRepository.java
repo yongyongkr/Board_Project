@@ -26,26 +26,26 @@ public class JpaArticleRepository implements ArticleRepository {
 
     @Override
     public List<Article> findByName(String username) {
-        return em.createQuery("select a from Article a where a.username = :name")
+        return em.createQuery("select a from Article a where a.username = :name", Article.class)
             .setParameter("name", username)
             .getResultList();
     }
 
     @Override
     public List<Article> findAll() {
-        return em.createQuery("select a from Article a").getResultList();
+        return em.createQuery("select a from Article a", Article.class).getResultList();
     }
 
     @Override
     public void delete(Long articleId) {
-        em.createQuery("delete from Article a where a.id = :id")
+        em.createQuery("delete from Article a where a.id = :id", Article.class)
             .setParameter("id", articleId)
             .executeUpdate();
     }
 
     @Override
     public void plus(Long articleId) {
-        em.createQuery("update Article a set a.likes = a.likes + 1 where a.id = :id")
+        em.createQuery("update Article a set a.likes = a.likes + 1 where a.id = :id", Article.class)
             .setParameter("id", articleId)
             .executeUpdate();
         em.clear();
@@ -53,7 +53,7 @@ public class JpaArticleRepository implements ArticleRepository {
 
     @Override
     public void minus(Long articleId) {
-        em.createQuery("update Article a set a.dislikes = a.dislikes + 1 where a.id = :id")
+        em.createQuery("update Article a set a.dislikes = a.dislikes + 1 where a.id = :id", Article.class)
             .setParameter("id", articleId)
             .executeUpdate();
         em.clear();
