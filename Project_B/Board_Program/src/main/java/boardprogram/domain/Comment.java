@@ -1,6 +1,5 @@
 package boardprogram.domain;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
@@ -22,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Comment {
+public class Comment extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,15 +46,17 @@ public class Comment {
     @OneToMany(mappedBy = "parent")
     private List<Comment> children = new ArrayList<>();
 
-    private LocalDateTime createTime;
-    private LocalDateTime lastModifiedTime;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "article_id")
     private Article article;
 
     public void setArticle(Article article) {
         this.article = article;
+    }
+
+    private void setCommentRelation(Comment parent) {
+        this.parent = parent;
+        parent.getChildren().add(this);
     }
 
     protected Comment(String username, String content) {
@@ -65,8 +66,13 @@ public class Comment {
         this.dislikes = 0;
     }
 
-    public static Comment createComment(String username, String content) {
+    public static Comment createRootComment(String username, String content) {
+        return new Comment(username, content);
+    }
+
+    public static Comment createLeafComment(Comment parent, String username, String content) {
         Comment comment = new Comment(username, content);
+        comment.setCommentRelation(parent);
         return comment;
     }
 }
