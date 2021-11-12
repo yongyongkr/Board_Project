@@ -1,17 +1,16 @@
-/*
 package boardprogram.service;
 
-import java.util.List;
-import project.b.guest.book.article.Article;
+import boardprogram.domain.Article;
 import boardprogram.repository.ArticleRepository;
+import java.util.List;
+import javax.transaction.Transactional;
+import org.springframework.stereotype.Service;
 
-public class GuestBookService {
+@Service
+@Transactional
+public class ArticleService {
 
     private ArticleRepository articleRepository;
-
-    public GuestBookService(ArticleRepository articleRepository) {
-        this.articleRepository = articleRepository;
-    }
 
     public void upload(Article article) {
         articleRepository.save(article);
@@ -34,4 +33,4 @@ public class GuestBookService {
     public void dislikes(Long id) {
         articleRepository.minus(id);
     }
-}*/
+}
