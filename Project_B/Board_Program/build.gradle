@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'project.b'
+group = 'Project_B'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
