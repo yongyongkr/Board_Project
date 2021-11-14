@@ -89,12 +89,13 @@ class JpaArticleRepositoryTest {
         assertThat(findArticle.getLikes()).isEqualTo(0);
 
         //when
-        articleRepository.plus(savedId);
+        Integer updatedLike = articleRepository.plus(savedId);
         Article updateArticle = articleRepository.findById(savedId)
             .orElseThrow(() -> new Exception("cannot find"));
 
         //then
         assertThat(updateArticle.getLikes()).isEqualTo(1);
+        assertThat(updatedLike).isEqualTo(1);
     }
 
     @Test
@@ -106,12 +107,13 @@ class JpaArticleRepositoryTest {
         assertThat(findArticle.getDislikes()).isEqualTo(0);
 
         //when
-        articleRepository.minus(savedId);
+        Integer updatedDislike = articleRepository.minus(savedId);
         Article updateArticle = articleRepository.findById(savedId)
             .orElseThrow(() -> new Exception("cannot find"));
 
         //then
         assertThat(updateArticle.getDislikes()).isEqualTo(1);
+        assertThat(updatedDislike).isEqualTo(1);
     }
 
     private void saveThreeArticle() {
