@@ -39,27 +39,35 @@ public class JpaCommentRepository implements CommentRepository {
     }
 
     @Override
-    public void delete(Long commentId) {
+    public Long delete(Long commentId) {
         em.createQuery("update Comment c set c.content = :content where c.id = :id")
             .setParameter("content", "삭제된 댓글입니다")
             .setParameter("id", commentId)
             .executeUpdate();
         em.clear();
+
+        return commentId;
     }
 
     @Override
-    public void plus(Long commentId) {
+    public Integer plus(Long commentId) {
         em.createQuery("update Comment c set c.likes = c.likes + 1 where c.id = :id")
             .setParameter("id", commentId)
             .executeUpdate();
         em.clear();
+
+        Comment findComment = em.find(Comment.class, commentId);
+        return findComment.getLikes();
     }
 
     @Override
-    public void minus(Long commentId) {
+    public Integer minus(Long commentId) {
         em.createQuery("update Comment c set c.dislikes = c.dislikes + 1 where c.id = :id")
             .setParameter("id", commentId)
             .executeUpdate();
         em.clear();
+
+        Comment findComment = em.find(Comment.class, commentId);
+        return findComment.getDislikes();
     }
 }
