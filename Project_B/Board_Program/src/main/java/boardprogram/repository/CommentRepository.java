@@ -8,15 +8,15 @@ public interface CommentRepository {
 
     Long save(Comment comment);
 
-    Optional<Comment> findById(Long id);
+    Optional<Comment> findById(Long commentId);
 
     List<Comment> findByArticle(Long articleId);
 
     List<Comment> findAll();
 
-    void delete(Long id);
+    Long delete(Long commentId);
 
-    void plus(Long id);
+    Integer plus(Long commentId);
 
-    void minus(Long id);
+    Integer minus(Long commentId);
 }

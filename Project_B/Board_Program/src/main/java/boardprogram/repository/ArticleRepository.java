@@ -8,15 +8,15 @@ public interface ArticleRepository {
 
     Long save(Article article);
 
-    Optional<Article> findById(Long id);
+    Optional<Article> findById(Long articleId);
 
     List<Article> findByName(String name);
 
     List<Article> findAll();
 
-    void delete(Long id);
+    void delete(Long articleId);
 
-    Integer plus(Long id);
+    Integer plus(Long articleId);
 
-    Integer minus(Long id);
+    Integer minus(Long articleId);
 }
