@@ -2,6 +2,7 @@ package boardprogram.service;
 
 import boardprogram.domain.Article;
 import boardprogram.repository.ArticleRepository;
+import java.time.LocalDateTime;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,14 @@ public class ArticleService {
 
     private ArticleRepository articleRepository;
 
-    public void upload(Article article) {
+    public Long upload(Article article) {
+        article.setCreateTime(LocalDateTime.now());
+        articleRepository.save(article);
+        return article.getId();
+    }
+
+    public void updateContent(Article article) {
+        article.setLastModifiedTime(LocalDateTime.now());
         articleRepository.save(article);
     }
 
