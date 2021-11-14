@@ -1,17 +1,18 @@
 package boardprogram.service;
 
-import boardprogram.domain.Article;
 import boardprogram.domain.Comment;
 import boardprogram.repository.CommentRepository;
 import java.util.List;
 import javax.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class CommentService {
 
-    private CommentRepository commentRepository;
+    private final CommentRepository commentRepository;
 
     public void upload(Comment comment) {
         commentRepository.save(comment);
