@@ -18,21 +18,22 @@ public class CommentService {
         commentRepository.save(comment);
     }
 
-    public List<Comment> commentList() {
+    public List<Comment> findAllComments() {
         return commentRepository.findAll();
     }
 
-    public void deleteByDislikes(Comment comment) {
-        if (comment.getDislikes() >= 10) {
-            commentRepository.delete(comment.getId());
+    public List<Comment> findCommentsByArticleId(Long articleId) {
+        return commentRepository.findByArticle(articleId);
+    }
+
+    public void likes(Long commentId) {
+        commentRepository.plus(commentId);
+    }
+
+    public void dislikes(Long commentId) {
+        Integer dislike = commentRepository.minus(commentId);
+        if (dislike >= 0) {
+            commentRepository.delete(commentId);
         }
-    }
-
-    public void likes(Long id) {
-        commentRepository.plus(id);
-    }
-
-    public void dislikes(Long id) {
-        commentRepository.minus(id);
     }
 }
