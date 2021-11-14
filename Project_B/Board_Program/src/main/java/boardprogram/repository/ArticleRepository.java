@@ -16,7 +16,7 @@ public interface ArticleRepository {
 
     void delete(Long id);
 
-    void plus(Long id);
+    Integer plus(Long id);
 
-    void minus(Long id);
+    Integer minus(Long id);
 }
