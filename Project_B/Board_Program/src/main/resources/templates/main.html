@@ -24,7 +24,7 @@
   <tr th:each="article : ${articles}">
     <th scope="row" th:text="${article.id}">1</th>
     <td><a href="" th:href="@{|/article/${article.id}|}" th:text="${article.title}">Mark</td>
-    <td><a href="" th:href="@{|/article/${article.username}|}" th:text="${article.username}">Otto</td>
+    <td><a href="" th:href="@{|/${article.username}/information|}" th:text="${article.username}">Otto</td>
     <td th:text="${article.createTime}">@mdo</td>
   </tr>
   </tbody>
