@@ -14,12 +14,17 @@ public class CommentService {
 
     private final CommentRepository commentRepository;
 
-    public void upload(Comment comment) {
-        commentRepository.save(comment);
+    public Long upload(Comment comment) {
+        return commentRepository.save(comment);
     }
 
     public List<Comment> findAllComments() {
         return commentRepository.findAll();
+    }
+
+    public Comment findByCommentId(Long commentId) throws Exception {
+        return commentRepository.findById(commentId).orElseThrow(
+            () -> new Exception("cannot find"));
     }
 
     public List<Comment> findCommentsByArticleId(Long articleId) {
