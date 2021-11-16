@@ -3,35 +3,32 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
   <title>게시판</title>
 </head>
 <body>
-<table class="table">
+
+<a href="" th:href="@{/article/post}">게시글 작성</a>
+
+<!-- 게시글 목록 시작 -->
+<table>
   <thead>
   <tr>
-    <th scope="col">게시글 번호</th>
-    <th scope="col">제목</th>
-    <th scope="col">작성자</th>
-    <th scope="col">작성 시간</th>
+    <th>게시글 번호</th>
+    <th>제목</th>
+    <th>작성자</th>
+    <th>작성 시간</th>
   </tr>
   </thead>
   <tbody>
   <tr th:each="article : ${articles}">
-    <th scope="row" th:text="${article.id}">1</th>
+    <th th:text="${article.id}">1</th>
     <td><a href="" th:href="@{|/article/${article.id}|}" th:text="${article.title}">Mark</td>
     <td><a href="" th:href="@{|/${article.username}/information|}" th:text="${article.username}">Otto</td>
     <td th:text="${article.createTime}">@mdo</td>
   </tr>
   </tbody>
 </table>
-
-<!-- bootstrap Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- 게시글 목록 끝 -->
 
 </body>
 </html>
