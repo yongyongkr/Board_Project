@@ -28,6 +28,10 @@ public class ArticleService {
         articleRepository.save(article);
     }
 
+    public void delete(Long articleId) {
+        articleRepository.delete(articleId);
+    }
+
     public List<Article> findAllArticles() {
         return articleRepository.findAll();
     }
