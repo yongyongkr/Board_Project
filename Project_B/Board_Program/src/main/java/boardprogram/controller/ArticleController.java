@@ -1,5 +1,6 @@
 package boardprogram.controller;
 
+import boardprogram.DTO.ArticleDTO;
 import boardprogram.domain.Article;
 import boardprogram.service.ArticleService;
 import java.util.List;
@@ -8,7 +9,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @RequiredArgsConstructor
@@ -40,6 +43,19 @@ public class ArticleController {
         List<Article> articles = articleService.findArticlesByUsername(username);
         model.addAttribute("articles", articles);
         return "/article/SearchUsername";
+    }
+
+    @GetMapping("/article/post")
+    public String ArticleForm() {
+        return "/article/articleForm";
+    }
+
+    @PostMapping("/article/post")
+    public String Post(@ModelAttribute ArticleDTO articleDTO) {
+        Article article = Article.createArticle(articleDTO.getTitle(), articleDTO.getUsername(),
+            articleDTO.getContent());
+        articleService.upload(article);
+        return "redirect:/";
     }
 
     @PostConstruct
