@@ -15,7 +15,11 @@ public class JpaArticleRepository implements ArticleRepository {
 
     @Override
     public Long save(Article article) {
-        em.persist(article);
+        if (article.getId() != null) {
+            em.merge(article);
+        } else {
+            em.persist(article);
+        }
         return article.getId();
     }
 
