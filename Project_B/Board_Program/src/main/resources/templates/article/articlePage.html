@@ -14,6 +14,9 @@
   <p>
     <div>작성 일자 : <span th:text="${article.createTime}"></span></div>
     <div>작성자 : <span th:text="${article.username}"></span></div>
+    <div>조회수 : <span th:text="${article.view}"></span></div>
+    <div>좋아요 : <span th:text="${article.likes}"></span></div>
+    <div>싫어요 : <span th:text="${article.dislikes}"></span></div>
   </p>
   <p th:text="${article.content}">본문 내용</p>
 </article>
