@@ -31,6 +31,10 @@ public class CommentService {
         return commentRepository.findByArticle(articleId);
     }
 
+    public List<Comment> popularCommentsByLikes() {
+        return commentRepository.orderByLikes();
+    }
+
     public void likes(Long commentId) {
         commentRepository.plus(commentId);
     }

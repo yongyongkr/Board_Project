@@ -32,6 +32,12 @@ public class ArticleService {
         articleRepository.delete(articleId);
     }
 
+    public void increaseView(Article article) throws Exception {
+        Article findArticle = articleRepository.findById(article.getId()).orElseThrow(
+            () -> new Exception("cannot find"));
+        findArticle.addView();
+    }
+
     public List<Article> findAllArticles() {
         return articleRepository.findAll();
     }
@@ -43,6 +49,14 @@ public class ArticleService {
 
     public List<Article> findArticlesByUsername(String username) {
         return articleRepository.findByName(username);
+    }
+
+    public List<Article> popularArticlesByView() {
+        return articleRepository.orderByView();
+    }
+
+    public List<Article> popularArticlesByLikes() {
+        return articleRepository.orderByLikes();
     }
 
     public void likes(Long articleId) {
