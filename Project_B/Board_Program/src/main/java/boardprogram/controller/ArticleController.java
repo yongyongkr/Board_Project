@@ -1,6 +1,7 @@
 package boardprogram.controller;
 
-import boardprogram.DTO.ArticleDTO;
+import boardprogram.DTO.ArticleCreateForm;
+import boardprogram.DTO.ArticleUpdateForm;
 import boardprogram.domain.Article;
 import boardprogram.domain.Comment;
 import boardprogram.service.ArticleService;
@@ -8,6 +9,7 @@ import boardprogram.service.CommentService;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class ArticleController {
@@ -42,6 +45,12 @@ public class ArticleController {
 
         List<Comment> comments = commentService.findCommentsByArticleId(articleId);
 
+        try {
+            articleService.increaseView(article);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         model.addAttribute("article", article);
         model.addAttribute("comments", comments);
 
@@ -56,35 +65,36 @@ public class ArticleController {
     }
 
     @GetMapping("/article/post")
-    public String ArticleForm() {
+    public String CreateForm() {
         return "/article/articleCreateForm";
     }
 
     @PostMapping("/article/post")
-    public String Post(@ModelAttribute ArticleDTO articleDTO) {
-        Article article = Article.createArticle(articleDTO.getTitle(), articleDTO.getUsername(),
-            articleDTO.getContent());
+    public String Post(@ModelAttribute ArticleCreateForm form) {
+        Article article = Article.createArticle(form.getTitle(), form.getUsername(),
+            form.getContent());
         articleService.upload(article);
-        return "redirect:/";
+        return "redirect:/article/" + article.getId();
     }
 
     @GetMapping("/article/update/{articleId}")
-    public String UpdateForm(@PathVariable Long articleId) {
+    public String UpdateForm(@PathVariable String articleId) {
         return "/article/articleUpdateForm";
     }
 
-    @PatchMapping("/article/update/{articleId}")
-    public String UpdateArticle(@PathVariable Long articleId, ArticleDTO articleDTO) {
+    @PostMapping("/article/update/{articleId}")
+    public String UpdateArticle(@PathVariable Long articleId,
+        @ModelAttribute ArticleUpdateForm form) {
         Article article = null;
         try {
             article = articleService.findArticleById(articleId);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        Article updatedArticle = Article.updateArticle(article, articleDTO.getTitle(),
-            articleDTO.getContent());
 
-        articleService.updateContent(article);
+        Article updatedArticle = Article.updateArticle(article, form.getTitle(), form.getContent());
+
+        articleService.updateContent(updatedArticle);
         return "redirect:/article/" + articleId;
     }
 
