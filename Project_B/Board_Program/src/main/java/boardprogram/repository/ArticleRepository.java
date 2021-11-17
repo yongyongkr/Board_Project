@@ -14,6 +14,10 @@ public interface ArticleRepository {
 
     List<Article> findAll();
 
+    List<Article> orderByView();
+
+    List<Article> orderByLikes();
+
     void delete(Long articleId);
 
     Integer plus(Long articleId);

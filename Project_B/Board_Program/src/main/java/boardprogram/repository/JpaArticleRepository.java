@@ -41,6 +41,18 @@ public class JpaArticleRepository implements ArticleRepository {
     }
 
     @Override
+    public List<Article> orderByView() {
+        return em.createQuery("select a from Article a order by a.view desc", Article.class)
+            .getResultList();
+    }
+
+    @Override
+    public List<Article> orderByLikes() {
+        return em.createQuery("select a from Article a order by a.likes desc", Article.class)
+            .getResultList();
+    }
+
+    @Override
     public void delete(Long articleId) {
         em.createQuery("delete from Comment c where c.article.id = :id")
             .setParameter("id", articleId)
