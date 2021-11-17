@@ -1,22 +1,25 @@
 package boardprogram.DTO;
 
+import javax.persistence.Lob;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 @Getter
 @Setter
-public class ArticleDTO {
+@ToString
+public class ArticleUpdateForm {
 
     private String title;
-    private String username;
+
+    @Lob
     private String content;
 
-    public ArticleDTO() {
+    public ArticleUpdateForm() {
     }
 
-    public ArticleDTO(String title, String username, String content) {
+    public ArticleUpdateForm(String title, String content) {
         this.title = title;
-        this.username = username;
         this.content = content;
     }
 }
