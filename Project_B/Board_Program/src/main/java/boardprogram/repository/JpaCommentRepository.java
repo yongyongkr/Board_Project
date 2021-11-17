@@ -39,6 +39,12 @@ public class JpaCommentRepository implements CommentRepository {
     }
 
     @Override
+    public List<Comment> orderByLikes() {
+        return em.createQuery("select c from Comment c order by c.likes desc", Comment.class)
+            .getResultList();
+    }
+
+    @Override
     public Long delete(Long commentId) {
         em.createQuery("update Comment c set c.content = :content where c.id = :id")
             .setParameter("content", "삭제된 댓글입니다")

@@ -14,6 +14,8 @@ public interface CommentRepository {
 
     List<Comment> findAll();
 
+    List<Comment> orderByLikes();
+
     Long delete(Long commentId);
 
     Integer plus(Long commentId);
