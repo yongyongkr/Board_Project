@@ -96,12 +96,42 @@ public class ArticleController {
 
     @PostConstruct
     public void init() {
-        Article article1 = Article.createArticle("후라이 만드는법", "철수", "후라이팬에 기름을 두르고 굽는다");
-        Article article2 = Article.createArticle("일기", "영희", "오늘 날씨 맑음");
-        Article article3 = Article.createArticle("밥 먹을 사람?", "철수", "10분 뒤에 우리집으로");
+        Article article = Article.createArticle("아이디 추출용", "지석", "id 값이 필요합니다");
+        articleService.upload(article);
 
-        articleService.upload(article1);
+        Comment rootComment1 = Comment.createRootComment(article, "철수", "좋은 글 감사합니다");
+        commentService.upload(rootComment1);
+        Comment leafComment1 = Comment.createLeafComment(article, rootComment1, "영희", "동감합니다");
+        Comment leafComment2 = Comment.createLeafComment(article, rootComment1, "세찬", "인정합니다");
+        Comment leafComment3 = Comment.createLeafComment(article, rootComment1, "영희", "저는 반대합니다");
+        commentService.upload(leafComment1);
+        commentService.upload(leafComment2);
+        commentService.upload(leafComment3);
+
+        Comment rootComment2 = Comment.createRootComment(article, "미애", "이건 아니죠");
+        commentService.upload(rootComment2);
+        Comment leafComment4 = Comment.createLeafComment(article, rootComment2, "철수", "왜요?");
+        Comment leafComment5 = Comment.createLeafComment(article, rootComment2, "철수",
+            "저는 맞는것 같은데요?");
+        Comment leafComment6 = Comment.createLeafComment(article, rootComment2, "미애", "그냥요");
+        commentService.upload(leafComment4);
+        commentService.upload(leafComment5);
+        commentService.upload(leafComment6);
+
+        Article article2 = Article.createArticle("아이디 추출용", "지석", "id 값이 필요합니다");
         articleService.upload(article2);
+
+        Comment rootComment3 = Comment.createRootComment(article2, "철수", "좋은 글 감사합니다");
+        commentService.upload(rootComment3);
+        Comment leafComment7 = Comment.createLeafComment(article2, rootComment3, "영희", "동감합니다");
+        commentService.upload(leafComment7);
+
+        Article article3 = Article.createArticle("후라이 만드는법", "철수", "후라이팬에 기름을 두르고 굽는다");
+        Article article4 = Article.createArticle("일기", "영희", "오늘 날씨 맑음");
+        Article article5 = Article.createArticle("밥 먹을 사람?", "철수", "10분 뒤에 우리집으로");
+
         articleService.upload(article3);
+        articleService.upload(article4);
+        articleService.upload(article5);
     }
 }
