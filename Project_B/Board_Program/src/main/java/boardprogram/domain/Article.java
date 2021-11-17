@@ -10,10 +10,12 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.ToString;
 
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 public class Article extends BaseTimeEntity {
 
     @Id
@@ -27,6 +29,7 @@ public class Article extends BaseTimeEntity {
     @Lob
     private String content;
 
+    private Integer view;
     private Integer likes;
     private Integer dislikes;
 
@@ -34,6 +37,7 @@ public class Article extends BaseTimeEntity {
         this.title = title;
         this.username = username;
         this.content = content;
+        this.view = 1;
         this.likes = 0;
         this.dislikes = 0;
     }
@@ -44,7 +48,7 @@ public class Article extends BaseTimeEntity {
 
     public static Article updateArticle(Article article, String title, String content) {
         article.setTitle(title);
-        article.setTitle(content);
+        article.setContent(content);
         return article;
     }
 
@@ -54,5 +58,9 @@ public class Article extends BaseTimeEntity {
 
     private void setContent(String content) {
         this.content = content;
+    }
+
+    public void addView() {
+        this.view = this.view + 1;
     }
 }
