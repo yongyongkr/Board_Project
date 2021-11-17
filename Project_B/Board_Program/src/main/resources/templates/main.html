@@ -8,6 +8,16 @@
 <body>
 
 <a href="" th:href="@{/article/post}">게시글 작성</a>
+<form action="main.html" th:action th:method="post">
+  <select>
+    <option value="title">제목</option>
+    <option value="content">내용</option>
+    <option value="username">작성자</option>
+  </select>
+  <input name="keyword">
+  <input type="submit" value="검색">
+</form>
+<a href="" th:href="@{/popular}">인기 게시물</a>
 
 <!-- 게시글 목록 시작 -->
 <table>
@@ -21,7 +31,6 @@
   </thead>
   <tbody>
   <tr th:each="article : ${articles}">
-    <th th:text="${article.id}">1</th>
     <td><a href="" th:href="@{|/article/${article.id}|}" th:text="${article.title}">Mark</td>
     <td><a href="" th:href="@{|/${article.username}/information|}" th:text="${article.username}">Otto</td>
     <td th:text="${article.createTime}">@mdo</td>
