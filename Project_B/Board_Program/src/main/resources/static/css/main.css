@@ -1,0 +1,10 @@
+.main-navbar li {
+  background-color: bisque;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+
+.main-navbar li:visited {
+  color: black;
+}
