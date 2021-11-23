@@ -2,6 +2,7 @@ package boardprogram.controller;
 
 import boardprogram.DTO.ArticleCreateForm;
 import boardprogram.DTO.ArticleUpdateForm;
+import boardprogram.DTO.CommentDTO;
 import boardprogram.domain.Article;
 import boardprogram.domain.Comment;
 import boardprogram.service.ArticleService;
@@ -55,6 +56,21 @@ public class ArticleController {
         model.addAttribute("comments", comments);
 
         return "article/articlePage";
+    }
+
+    @PostMapping("/article/{articleId}")
+    public String SaveComment(@ModelAttribute CommentDTO dto, @PathVariable Long articleId) {
+        Article article = null;
+        try {
+            article = articleService.findArticleById(articleId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Comment comment = Comment.createRootComment(article, dto.getUsername(),
+            dto.getContent());
+        commentService.upload(comment);
+
+        return "redirect:/article/" + articleId;
     }
 
     @GetMapping("/{username}/information")
