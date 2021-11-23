@@ -16,7 +16,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -27,13 +26,6 @@ public class ArticleController {
 
     private final ArticleService articleService;
     private final CommentService commentService;
-
-    @GetMapping
-    public String Main(Model model) {
-        List<Article> articles = articleService.findAllArticles();
-        model.addAttribute("articles", articles);
-        return "main";
-    }
 
     @GetMapping("/article/{articleId}")
     public String Article(@PathVariable Long articleId, Model model) {
@@ -58,23 +50,8 @@ public class ArticleController {
         return "article/articlePage";
     }
 
-    @PostMapping("/article/{articleId}")
-    public String SaveComment(@ModelAttribute CommentDTO dto, @PathVariable Long articleId) {
-        Article article = null;
-        try {
-            article = articleService.findArticleById(articleId);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        Comment comment = Comment.createRootComment(article, dto.getUsername(),
-            dto.getContent());
-        commentService.upload(comment);
-
-        return "redirect:/article/" + articleId;
-    }
-
     @GetMapping("/{username}/information")
-    public String SearchByUsername(@PathVariable String username, Model model) {
+    public String FindByUsername(@PathVariable String username, Model model) {
         List<Article> articles = articleService.findArticlesByUsername(username);
         model.addAttribute("articles", articles);
         return "/article/SearchUsername";
