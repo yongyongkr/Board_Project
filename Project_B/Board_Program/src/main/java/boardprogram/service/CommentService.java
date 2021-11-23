@@ -2,6 +2,7 @@ package boardprogram.service;
 
 import boardprogram.domain.Comment;
 import boardprogram.repository.CommentRepository;
+import java.time.LocalDateTime;
 import java.util.List;
 import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -15,6 +16,7 @@ public class CommentService {
     private final CommentRepository commentRepository;
 
     public Long upload(Comment comment) {
+        comment.setCreateTime(LocalDateTime.now());
         return commentRepository.save(comment);
     }
 
