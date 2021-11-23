@@ -24,13 +24,11 @@
 <a href="" th:href="@{|/article/update/${article.id}|}">수정</a>
 <a href="" th:href="@{|/article/delete/${article.id}|}">삭제</a>
 
-<div>
-  <div>댓글</div>
-  <div>
-    <textarea>댓글을 작성해주세요</textarea>
-    <button>등록</button>
-  </div>
-</div>
+<form action="articlePage.html" th:action method="post">
+  작성자 : <input type="text" name="username"> <br>
+  <textarea name="content"></textarea> <br>
+  <input type="submit" value="등록">
+</form>
 
 <!-- 댓글 시작 -->
 <table>
