@@ -2,6 +2,7 @@ package boardprogram.domain;
 
 import java.time.LocalDate;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,8 +11,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -24,6 +23,7 @@ public class Member extends BaseTimeEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "member_id")
 	private Long id;
 
 	@NotBlank
@@ -53,9 +53,6 @@ public class Member extends BaseTimeEntity {
 
 	public static Member createMember(String username, Gender gender, String phoneNumber, String email,
 		LocalDate birthday) {
-		Member member = new Member(username, gender, phoneNumber, email, birthday);
-		return member;
+		return new Member(username, gender, phoneNumber, email, birthday);
 	}
-
-	// TODO 연관관계 메서드
 }

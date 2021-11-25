@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5dbeaf-f6b7-4706-bffc-8e9279262c5d" name="Changes" comment="프로젝트 구조 변경">
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Member.java" afterDir="false" />
+    <list default="true" id="9b5dbeaf-f6b7-4706-bffc-8e9279262c5d" name="Changes" comment="feat&lt;GENDER&gt;: 성별 Enum 생성&#10;&#10;- 멤버 엔티티에 사용">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Member.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +41,8 @@
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
         <option value="HTML File" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -99,8 +101,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="boardprogram.DTO" />
       <recent name="boardprogram.domain" />
+      <recent name="boardprogram.DTO" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\Simple_CRUD_Project" />
@@ -287,21 +289,7 @@
       <workItem from="1637736127046" duration="5000" />
       <workItem from="1637833312045" duration="615000" />
       <workItem from="1637833956333" duration="1000" />
-      <workItem from="1637835866011" duration="1637000" />
-    </task>
-    <task id="LOCAL-00036" summary="ArticleService 테스트&#10;&#10;- 업로드&#10;- 게시글 전체 조회&#10;- 좋아요, 싫어요 기능&#10;- 싫어요 10개가 되면 게시글 자동 삭제&#10;- 자동 삭제 시 연관된 댓글도 같이 삭제">
-      <created>1636857995878</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1636857995878</updated>
-    </task>
-    <task id="LOCAL-00037" summary="JpaCommentRepository 수정&#10;&#10;- delete, plus, minus 메소드 반환 값 생성">
-      <created>1636858040662</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1636858040662</updated>
+      <workItem from="1637835866011" duration="2921000" />
     </task>
     <task id="LOCAL-00038" summary="CommentService 수정&#10;&#10;- 파라미터 명 수정&#10;- 자동 삭제 기능 dislikes 메소드 내부에 생성&#10;- 댓글 전체 조회 메소드명 변환&#10;- 게시글 id 값으로 List 반환하는 메소드 추가">
       <created>1636858121077</created>
@@ -632,7 +620,21 @@
       <option name="project" value="LOCAL" />
       <updated>1637836019792</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="feat&lt;MEMBER&gt;: 멤버 엔티티 생성&#10;&#10;- 이름, 성별, 전화번호, 이메일, 생일 속성&#10;- 생성자는 protected, 펙토리 메소드로 객체 생성 가능&#10;- TODO 연관관계 메서드">
+      <created>1637837948105</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1637837948105</updated>
+    </task>
+    <task id="LOCAL-00086" summary="feat&lt;GENDER&gt;: 성별 Enum 생성&#10;&#10;- 멤버 엔티티에 사용">
+      <created>1637837998722</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1637837998723</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -750,8 +752,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ArticleController init 추가&#10;&#10;- 더 많은 게시물 및 댓글 추가" />
-    <MESSAGE value="gradle 설정 추가&#10;&#10;- validation 추가" />
     <MESSAGE value="Article 수정&#10;&#10;- 조회수 필드 추가&#10;- 조회수 더해주는 메서드 추가" />
     <MESSAGE value="ArticleDTO 등록폼 수정폼으로 분할" />
     <MESSAGE value="ArticleRepository 메소드 추가&#10;&#10;- 조회수 순으로 조회&#10;- 추천 순으로 조회" />
@@ -775,6 +775,8 @@
     <MESSAGE value="SearchType 생성&#10;&#10;- enum type&#10;- title, content, username 중 선택한 것으로 검색" />
     <MESSAGE value="검증 애노테이션 추가&#10;&#10;- 우선 대부분 String이라 NotBlank 선언" />
     <MESSAGE value="프로젝트 구조 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="프로젝트 구조 변경" />
+    <MESSAGE value="feat&lt;MEMBER&gt;: 멤버 엔티티 생성&#10;&#10;- 이름, 성별, 전화번호, 이메일, 생일 속성&#10;- 생성자는 protected, 펙토리 메소드로 객체 생성 가능&#10;- TODO 연관관계 메서드" />
+    <MESSAGE value="feat&lt;GENDER&gt;: 성별 Enum 생성&#10;&#10;- 멤버 엔티티에 사용" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat&lt;GENDER&gt;: 성별 Enum 생성&#10;&#10;- 멤버 엔티티에 사용" />
   </component>
 </project>
