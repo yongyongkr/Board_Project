@@ -1,3 +1,4 @@
+/*
 package boardprogram.controller;
 
 import boardprogram.DTO.SearchForm;
@@ -21,3 +22,4 @@ public class SearchController {
     }
 
 }
+*/

@@ -50,7 +50,7 @@ public class Comment extends BaseTimeEntity {
     @JoinColumn(name = "article_id")
     private Article article;
 
-    public void setArticle(Article article) {
+    public void setArticleRelation(Article article) {
         this.article = article;
     }
 
@@ -68,14 +68,14 @@ public class Comment extends BaseTimeEntity {
 
     public static Comment createRootComment(Article article, String username, String content) {
         Comment comment = new Comment(username, content);
-        comment.setArticle(article);
+        comment.setArticleRelation(article);
         return comment;
     }
 
     public static Comment createLeafComment(Article article, Comment parent, String username,
         String content) {
         Comment comment = new Comment(username, content);
-        comment.setArticle(article);
+        comment.setArticleRelation(article);
         comment.setCommentRelation(parent);
         return comment;
     }
