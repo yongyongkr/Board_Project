@@ -4,92 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5dbeaf-f6b7-4706-bffc-8e9279262c5d" name="Changes" comment="검증 애노테이션 추가&#10;&#10;- 우선 대부분 String이라 NotBlank 선언">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/DTO/ArticleCreateForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/DTO/ArticleUpdateForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/DTO/CommentDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/DTO/SearchForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/DTO/SearchType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/controller/ArticleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/controller/CommentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/controller/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/controller/PopularController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/controller/SearchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Article.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/BaseTimeEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/DeletedStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/repository/ArticleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/repository/CommentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/repository/JpaArticleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/repository/JpaCommentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/service/ArticleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/service/CommentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/article/SearchUsername.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/article/articleCreateForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/article/articlePage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/article/articleUpdateForm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/popular/articlesAndComments.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/boardprogram/ApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/boardprogram/repository/JpaArticleRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/boardprogram/repository/JpaCommentRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/boardprogram/service/ArticleServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/boardprogram/service/CommentServiceTest.java" afterDir="false" />
+    <list default="true" id="9b5dbeaf-f6b7-4706-bffc-8e9279262c5d" name="Changes" comment="프로젝트 구조 변경">
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Member.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/DTO/ArticleCreateForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/DTO/ArticleUpdateForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/DTO/CommentDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/DTO/SearchForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/DTO/SearchType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/controller/ArticleController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/controller/CommentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/controller/MainController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/controller/PopularController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/controller/SearchController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/domain/Article.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/domain/BaseTimeEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/domain/Comment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/domain/DeletedStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/repository/ArticleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/repository/CommentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/repository/JpaArticleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/repository/JpaCommentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/service/ArticleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/service/CommentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/static/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/static/main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/templates/article/SearchUsername.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/templates/article/articleCreateForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/templates/article/articlePage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/templates/article/articleUpdateForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/templates/main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/templates/popular/articlesAndComments.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/test/java/boardprogram/ApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/test/java/boardprogram/repository/JpaArticleRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/test/java/boardprogram/repository/JpaCommentRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/test/java/boardprogram/service/ArticleServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Board_Program/src/test/java/boardprogram/service/CommentServiceTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +95,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -370,14 +287,7 @@
       <workItem from="1637736127046" duration="5000" />
       <workItem from="1637833312045" duration="615000" />
       <workItem from="1637833956333" duration="1000" />
-      <workItem from="1637835866011" duration="98000" />
-    </task>
-    <task id="LOCAL-00035" summary="Repository 인터페이스 수정&#10;&#10;- 파라미터 명 수정">
-      <created>1636857922584</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1636857922584</updated>
+      <workItem from="1637835866011" duration="1637000" />
     </task>
     <task id="LOCAL-00036" summary="ArticleService 테스트&#10;&#10;- 업로드&#10;- 게시글 전체 조회&#10;- 좋아요, 싫어요 기능&#10;- 싫어요 10개가 되면 게시글 자동 삭제&#10;- 자동 삭제 시 연관된 댓글도 같이 삭제">
       <created>1636857995878</created>
@@ -715,7 +625,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637670715023</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="프로젝트 구조 변경">
+      <created>1637836019791</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1637836019792</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -833,7 +750,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ArticleController 기능 추가&#10;&#10;- Article 페이지에 해당 게시글의 댓글 목록 추가&#10;- update 관련 Get, Patch 메소드 추가&#10;- 삭제 관련 delete 메소드 추가" />
     <MESSAGE value="ArticleController init 추가&#10;&#10;- 더 많은 게시물 및 댓글 추가" />
     <MESSAGE value="gradle 설정 추가&#10;&#10;- validation 추가" />
     <MESSAGE value="Article 수정&#10;&#10;- 조회수 필드 추가&#10;- 조회수 더해주는 메서드 추가" />
@@ -858,6 +774,7 @@
     <MESSAGE value="SearchForm 생성&#10;&#10;- 메인 화면 검색창에서 받아올 정보를 담을 form" />
     <MESSAGE value="SearchType 생성&#10;&#10;- enum type&#10;- title, content, username 중 선택한 것으로 검색" />
     <MESSAGE value="검증 애노테이션 추가&#10;&#10;- 우선 대부분 String이라 NotBlank 선언" />
-    <option name="LAST_COMMIT_MESSAGE" value="검증 애노테이션 추가&#10;&#10;- 우선 대부분 String이라 NotBlank 선언" />
+    <MESSAGE value="프로젝트 구조 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="프로젝트 구조 변경" />
   </component>
 </project>
