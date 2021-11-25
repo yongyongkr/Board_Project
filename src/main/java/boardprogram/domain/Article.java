@@ -2,10 +2,14 @@ package boardprogram.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
+
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,6 +34,10 @@ public class Article extends BaseTimeEntity {
     private Integer likes;
     private Integer dislikes;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "member_id")
+    private Member member;
+
     protected Article(String title, String username, String content) {
         this.title = title;
         this.username = username;
@@ -47,6 +55,10 @@ public class Article extends BaseTimeEntity {
         article.setTitle(title);
         article.setContent(content);
         return article;
+    }
+
+    public void setMemberRelation(Member member) {
+        this.member = member;
     }
 
     private void setTitle(String title) {
