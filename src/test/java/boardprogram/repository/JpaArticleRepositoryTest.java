@@ -2,8 +2,13 @@ package boardprogram.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.time.LocalDate;
+
 import boardprogram.domain.Article;
 import boardprogram.domain.Comment;
+import boardprogram.domain.Gender;
+import boardprogram.domain.Member;
+
 import javax.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -117,9 +122,11 @@ class JpaArticleRepositoryTest {
     }
 
     private void saveThreeArticle() {
-        Article article1 = Article.createArticle("후라이 만드는법", "철수", "후라이팬에 기름을 두르고 굽는다");
-        Article article2 = Article.createArticle("일기", "영희", "오늘 날씨 맑음");
-        Article article3 = Article.createArticle("밥 먹을 사람?", "철수", "10분 뒤에 우리집으로");
+        Member member = Member.createMember("승준", Gender.MALE, "010-1234-1234", "jdw@gmail.com", LocalDate.of(1990, 3, 21));
+
+        Article article1 = Article.createArticle(member, "후라이 만드는법", "철수", "후라이팬에 기름을 두르고 굽는다");
+        Article article2 = Article.createArticle(member, "일기", "영희", "오늘 날씨 맑음");
+        Article article3 = Article.createArticle(member, "밥 먹을 사람?", "철수", "10분 뒤에 우리집으로");
 
         articleRepository.save(article1);
         articleRepository.save(article2);
@@ -127,12 +134,16 @@ class JpaArticleRepositoryTest {
     }
 
     private Long saveOneArticleAndGetId() {
-        Article article = Article.createArticle("아이디 추출용", "지석", "id 값이 필요합니다");
+        Member member = Member.createMember("승준", Gender.MALE, "010-1234-1234", "jdw@gmail.com", LocalDate.of(1990, 3, 21));
+
+        Article article = Article.createArticle(member, "아이디 추출용", "지석", "id 값이 필요합니다");
         return articleRepository.save(article);
     }
 
     private Long saveOneCommentAndGetArticleId() {
-        Article article = Article.createArticle("아이디 추출용", "지석", "id 값이 필요합니다");
+        Member member = Member.createMember("승준", Gender.MALE, "010-1234-1234", "jdw@gmail.com", LocalDate.of(1990, 3, 21));
+
+        Article article = Article.createArticle(member, "아이디 추출용", "지석", "id 값이 필요합니다");
         Long articleId = articleRepository.save(article);
 
         Comment rootComment = Comment.createRootComment(article, "철수", "좋은 글 감사합니다");

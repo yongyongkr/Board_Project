@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5dbeaf-f6b7-4706-bffc-8e9279262c5d" name="Changes" comment="feat&lt;GENDER&gt;: 성별 Enum 생성&#10;&#10;- 멤버 엔티티에 사용">
+    <list default="true" id="9b5dbeaf-f6b7-4706-bffc-8e9279262c5d" name="Changes" comment="chore: Comment 메소드명 변경, Controller 주석처리&#10;&#10;- Comment의 연관관계 메서드명 더 명확하게 변경&#10;- Controller는 추후 기능 추가 후 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/boardprogram/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/boardprogram/controller/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/boardprogram/repository/JpaArticleRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/boardprogram/repository/JpaArticleRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/boardprogram/repository/JpaCommentRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/boardprogram/repository/JpaCommentRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/boardprogram/service/ArticleServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/boardprogram/service/ArticleServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/boardprogram/service/CommentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/boardprogram/service/CommentServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,35 +291,7 @@
       <workItem from="1637736127046" duration="5000" />
       <workItem from="1637833312045" duration="615000" />
       <workItem from="1637833956333" duration="1000" />
-      <workItem from="1637835866011" duration="2921000" />
-    </task>
-    <task id="LOCAL-00038" summary="CommentService 수정&#10;&#10;- 파라미터 명 수정&#10;- 자동 삭제 기능 dislikes 메소드 내부에 생성&#10;- 댓글 전체 조회 메소드명 변환&#10;- 게시글 id 값으로 List 반환하는 메소드 추가">
-      <created>1636858121077</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1636858121077</updated>
-    </task>
-    <task id="LOCAL-00039" summary="기존 프로젝트 모두 제거">
-      <created>1636920389800</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1636920389800</updated>
-    </task>
-    <task id="LOCAL-00040" summary="프로젝트 설정 정보 변경&#10;&#10;- 프로젝트 명">
-      <created>1636920549657</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1636920549657</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Main.html 생성&#10;&#10;- 아직 게시글 전체 조회랑 다를바 없음&#10;- 추후 수정">
-      <created>1636920673925</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1636920673925</updated>
+      <workItem from="1637835866011" duration="3627000" />
     </task>
     <task id="LOCAL-00042" summary="SearchUsername.html 생성&#10;&#10;- 아직 게시글 작성자에 따른 전체 조회랑 다를바 없음&#10;- 추후 수정">
       <created>1636920733430</created>
@@ -634,7 +608,35 @@
       <option name="project" value="LOCAL" />
       <updated>1637837998723</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="chore: 멤버 id의 column name 설정&#10;&#10;- DB에서 member_id 컬럼명으로 저장되도록">
+      <created>1637838898980</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1637838898980</updated>
+    </task>
+    <task id="LOCAL-00088" summary="feat&lt;Article&gt;: 멤버 엔티티와의 연관관계&#10;&#10;- 지연 로딩 설정">
+      <created>1637838948117</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1637838948117</updated>
+    </task>
+    <task id="LOCAL-00089" summary="feat&lt;Article&gt;: 멤버 엔티티와의 연관관계&#10;&#10;- 팩토리 메소드에 연관관계 설정">
+      <created>1637839110649</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1637839110649</updated>
+    </task>
+    <task id="LOCAL-00090" summary="chore: Comment 메소드명 변경, Controller 주석처리&#10;&#10;- Comment의 연관관계 메서드명 더 명확하게 변경&#10;- Controller는 추후 기능 추가 후 수정">
+      <created>1637839182256</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1637839182256</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -752,10 +754,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Article 수정&#10;&#10;- 조회수 필드 추가&#10;- 조회수 더해주는 메서드 추가" />
-    <MESSAGE value="ArticleDTO 등록폼 수정폼으로 분할" />
-    <MESSAGE value="ArticleRepository 메소드 추가&#10;&#10;- 조회수 순으로 조회&#10;- 추천 순으로 조회" />
-    <MESSAGE value="CommentRepository 메소드 추가&#10;&#10;- 추천 순으로 조회" />
     <MESSAGE value="Service에 새로운 메소드 추가&#10;&#10;- 조회수 순 조회&#10;- 추천수 순 조회" />
     <MESSAGE value="PopularController 생성&#10;&#10;- 인기글 조회는 별도의 컨트롤러 생성" />
     <MESSAGE value="main.html 기능 추가&#10;&#10;- 검색창 생성&#10;- 인기 게시물 보기" />
@@ -777,6 +775,10 @@
     <MESSAGE value="프로젝트 구조 변경" />
     <MESSAGE value="feat&lt;MEMBER&gt;: 멤버 엔티티 생성&#10;&#10;- 이름, 성별, 전화번호, 이메일, 생일 속성&#10;- 생성자는 protected, 펙토리 메소드로 객체 생성 가능&#10;- TODO 연관관계 메서드" />
     <MESSAGE value="feat&lt;GENDER&gt;: 성별 Enum 생성&#10;&#10;- 멤버 엔티티에 사용" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat&lt;GENDER&gt;: 성별 Enum 생성&#10;&#10;- 멤버 엔티티에 사용" />
+    <MESSAGE value="chore: 멤버 id의 column name 설정&#10;&#10;- DB에서 member_id 컬럼명으로 저장되도록" />
+    <MESSAGE value="feat&lt;Article&gt;: 멤버 엔티티와의 연관관계&#10;&#10;- 지연 로딩 설정" />
+    <MESSAGE value="feat&lt;Article&gt;: 멤버 엔티티와의 연관관계&#10;&#10;- 팩토리 메소드에 연관관계 설정" />
+    <MESSAGE value="chore: Comment 메소드명 변경, Controller 주석처리&#10;&#10;- Comment의 연관관계 메서드명 더 명확하게 변경&#10;- Controller는 추후 기능 추가 후 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: Comment 메소드명 변경, Controller 주석처리&#10;&#10;- Comment의 연관관계 메서드명 더 명확하게 변경&#10;- Controller는 추후 기능 추가 후 수정" />
   </component>
 </project>

@@ -4,8 +4,12 @@ import boardprogram.DTO.ArticleCreateForm;
 import boardprogram.DTO.ArticleUpdateForm;
 import boardprogram.domain.Article;
 import boardprogram.domain.Comment;
+import boardprogram.domain.Gender;
+import boardprogram.domain.Member;
 import boardprogram.service.ArticleService;
 import boardprogram.service.CommentService;
+
+import java.time.LocalDate;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
@@ -98,7 +102,9 @@ public class ArticleController {
 
     @PostConstruct
     public void init() {
-        Article article = Article.createArticle("아이디 추출용", "지석", "id 값이 필요합니다");
+        Member member = Member.createMember("승준", Gender.MALE, "010-1234-1234", "jdw@gmail.com", LocalDate.of(1990, 3, 21));
+
+        Article article = Article.createArticle(member, "아이디 추출용", "지석", "id 값이 필요합니다");
         articleService.upload(article);
 
         Comment rootComment1 = Comment.createRootComment(article, "철수", "좋은 글 감사합니다");
@@ -120,7 +126,7 @@ public class ArticleController {
         commentService.upload(leafComment5);
         commentService.upload(leafComment6);
 
-        Article article2 = Article.createArticle("아이디 추출용", "지석", "id 값이 필요합니다");
+        Article article2 = Article.createArticle(member, "아이디 추출용", "지석", "id 값이 필요합니다");
         articleService.upload(article2);
 
         Comment rootComment3 = Comment.createRootComment(article2, "철수", "좋은 글 감사합니다");
@@ -128,9 +134,9 @@ public class ArticleController {
         Comment leafComment7 = Comment.createLeafComment(article2, rootComment3, "영희", "동감합니다");
         commentService.upload(leafComment7);
 
-        Article article3 = Article.createArticle("후라이 만드는법", "철수", "후라이팬에 기름을 두르고 굽는다");
-        Article article4 = Article.createArticle("일기", "영희", "오늘 날씨 맑음");
-        Article article5 = Article.createArticle("밥 먹을 사람?", "철수", "10분 뒤에 우리집으로");
+        Article article3 = Article.createArticle(member, "후라이 만드는법", "철수", "후라이팬에 기름을 두르고 굽는다");
+        Article article4 = Article.createArticle(member, "일기", "영희", "오늘 날씨 맑음");
+        Article article5 = Article.createArticle(member, "밥 먹을 사람?", "철수", "10분 뒤에 우리집으로");
 
         articleService.upload(article3);
         articleService.upload(article4);

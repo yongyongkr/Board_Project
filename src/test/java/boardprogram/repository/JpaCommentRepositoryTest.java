@@ -4,6 +4,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import boardprogram.domain.Article;
 import boardprogram.domain.Comment;
+import boardprogram.domain.Gender;
+import boardprogram.domain.Member;
+
+import java.time.LocalDate;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.junit.Test;
@@ -127,7 +131,9 @@ public class JpaCommentRepositoryTest {
     }
 
     private Long saveManyComments() {
-        Article article = Article.createArticle("아이디 추출용", "지석", "id 값이 필요합니다");
+        Member member = Member.createMember("승준", Gender.MALE, "010-1234-1234", "jdw@gmail.com", LocalDate.of(1990, 3, 21));
+
+        Article article = Article.createArticle(member, "아이디 추출용", "지석", "id 값이 필요합니다");
         articleRepository.save(article);
 
         Comment rootComment1 = Comment.createRootComment(article, "철수", "좋은 글 감사합니다");
@@ -153,7 +159,9 @@ public class JpaCommentRepositoryTest {
     }
 
     private Long saveOneRootCommentAndGetId() {
-        Article article = Article.createArticle("아이디 추출용", "지석", "id 값이 필요합니다");
+        Member member = Member.createMember("승준", Gender.MALE, "010-1234-1234", "jdw@gmail.com", LocalDate.of(1990, 3, 21));
+
+        Article article = Article.createArticle(member, "아이디 추출용", "지석", "id 값이 필요합니다");
         articleRepository.save(article);
 
         Comment rootComment = Comment.createRootComment(article, "철수", "좋은 글 감사합니다");
@@ -161,7 +169,9 @@ public class JpaCommentRepositoryTest {
     }
 
     private Long saveOneLeafCommentAndGetId() {
-        Article article = Article.createArticle("아이디 추출용", "지석", "id 값이 필요합니다");
+        Member member = Member.createMember("승준", Gender.MALE, "010-1234-1234", "jdw@gmail.com", LocalDate.of(1990, 3, 21));
+
+        Article article = Article.createArticle(member, "아이디 추출용", "지석", "id 값이 필요합니다");
         articleRepository.save(article);
 
         Comment rootComment = Comment.createRootComment(article, "철수", "좋은 글 감사합니다");
