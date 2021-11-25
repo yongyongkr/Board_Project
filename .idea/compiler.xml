@@ -15,6 +15,11 @@
       <module name="boardprogram" target="11" />
       <module name="boardprogram.main" target="11" />
       <module name="boardprogram.test" target="11" />
+      <module name="Business_Card_Program" target="11" />
+      <module name="Business_Card_Program.main" target="11" />
+      <module name="Business_Card_Program.test" target="11" />
+      <module name="reservation.main" target="11" />
+      <module name="reservation.test" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9b5dbeaf-f6b7-4706-bffc-8e9279262c5d" name="Changes" comment="검증 애노테이션 추가&#10;&#10;- 우선 대부분 String이라 NotBlank 선언">
+      <change afterPath="$PROJECT_DIR$/.idea/modules/Board_Program.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/boardprogram.test.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Board_Program/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/Board_Program/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Board_Program/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/sql/ddl.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/BusinessCardProgramApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/controller/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/controller/MemberController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/controller/MemberSearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/domain/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/dto/MemberForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/repository/JpaMemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/repository/MemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/service/MemberService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/resources/templates/createTemp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/resources/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/resources/templates/members/createMemberForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/resources/templates/members/memberList.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/resources/templates/members/search.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/test/java/businesscardprogram/BusinessCardProgramApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/test/java/businesscardprogram/repository/JpaMemberRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/test/java/businesscardprogram/service/MemberServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Board_Program/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Board_Program/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/sql/ddl.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/DTO/ArticleCreateForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/DTO/ArticleUpdateForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/DTO/CommentDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/DTO/SearchForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/DTO/SearchType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/controller/ArticleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/controller/CommentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/controller/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/controller/PopularController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/domain/Article.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/domain/BaseTimeEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/domain/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/domain/DeletedStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/repository/ArticleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/repository/CommentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/repository/JpaArticleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/repository/JpaCommentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/service/ArticleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/service/CommentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/static/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/static/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/templates/article/SearchUsername.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/templates/article/articleCreateForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/templates/article/articlePage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/templates/article/articleUpdateForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/templates/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/templates/popular/articlesAndComments.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/test/java/boardprogram/ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/test/java/boardprogram/repository/JpaArticleRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/test/java/boardprogram/repository/JpaCommentRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/test/java/boardprogram/service/ArticleServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/test/java/boardprogram/service/CommentServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/Board_Program">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="HTML File" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="JPA Inspector" value="true" />
+        <entry key="JPA Palette" value="true" />
+        <entry key="JPA Structure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="JPA Inspector" value="false" />
+        <entry key="JPA Palette" value="false" />
+        <entry key="JPA Structure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectId" id="20bhD47Ix5T4MIyMz7xqQypCCn1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="boardprogram.DTO" />
+      <recent name="boardprogram.domain" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Simple_CRUD_Project" />
+      <recent name="C:\Users\user\Board_Program" />
+      <recent name="C:\Users\user\Simple_CRUD_Project\Project_B\Board_Program\src\main\resources\templates" />
+      <recent name="C:\Users\user\Simple_CRUD_Project\Project_B\Board_Program" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="boardprogram.repository" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="boardprogram.DTO" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="ArticleServiceTest.좋아요_싫어요" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="guest.book.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="boardprogram.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="boardprogram.service" />
+      <option name="MAIN_CLASS_NAME" value="boardprogram.service.ArticleServiceTest" />
+      <option name="METHOD_NAME" value="좋아요_싫어요" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ArticleServiceTest.싫어요_자동삭제시_댓글까지삭제" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="guest.book.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="boardprogram.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="boardprogram.service" />
+      <option name="MAIN_CLASS_NAME" value="boardprogram.service.ArticleServiceTest" />
+      <option name="METHOD_NAME" value="싫어요_자동삭제시_댓글까지삭제" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentServiceTest.업로드" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Board_Program.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="boardprogram.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="boardprogram.service" />
+      <option name="MAIN_CLASS_NAME" value="boardprogram.service.CommentServiceTest" />
+      <option name="METHOD_NAME" value="업로드" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentServiceTest.댓글_싫어요10개_자동삭제" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Board_Program.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="boardprogram.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="boardprogram.service" />
+      <option name="MAIN_CLASS_NAME" value="boardprogram.service.CommentServiceTest" />
+      <option name="METHOD_NAME" value="댓글_싫어요10개_자동삭제" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentServiceTest.댓글_싫어요10개_자동삭제_내용만변경" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Board_Program.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="boardprogram.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="boardprogram.service" />
+      <option name="MAIN_CLASS_NAME" value="boardprogram.service.CommentServiceTest" />
+      <option name="METHOD_NAME" value="댓글_싫어요10개_자동삭제_내용만변경" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CommentServiceTest.싫어요_대댓글_내용변경" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Board_Program.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="boardprogram.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="boardprogram.service" />
+      <option name="MAIN_CLASS_NAME" value="boardprogram.service.CommentServiceTest" />
+      <option name="METHOD_NAME" value="싫어요_대댓글_내용변경" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Board_Program.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="boardprogram.Application" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BusinessCardProgramApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Business_Card_Program.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="businesscardprogram.BusinessCardProgramApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CommentServiceTest.싫어요_대댓글_내용변경" />
+        <item itemvalue="JUnit.CommentServiceTest.댓글_싫어요10개_자동삭제_내용만변경" />
+        <item itemvalue="JUnit.CommentServiceTest.댓글_싫어요10개_자동삭제" />
+        <item itemvalue="JUnit.CommentServiceTest.업로드" />
+        <item itemvalue="JUnit.ArticleServiceTest.싫어요_자동삭제시_댓글까지삭제" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9b5dbeaf-f6b7-4706-bffc-8e9279262c5d" name="Changes" comment="" />
+      <created>1636319071771</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1636319071771</updated>
+      <workItem from="1636319073073" duration="2610000" />
+      <workItem from="1636382408132" duration="271000" />
+      <workItem from="1636422954777" duration="3988000" />
+      <workItem from="1636432577138" duration="16000" />
+      <workItem from="1636502712424" duration="12818000" />
+      <workItem from="1636562926273" duration="2106000" />
+      <workItem from="1636582157446" duration="875000" />
+      <workItem from="1636682705584" duration="1158000" />
+      <workItem from="1636740347897" duration="663000" />
+      <workItem from="1636794026757" duration="228000" />
+      <workItem from="1636852479213" duration="1171000" />
+      <workItem from="1636853763856" duration="4044000" />
+      <workItem from="1636859621049" duration="5447000" />
+      <workItem from="1636920209187" duration="3629000" />
+      <workItem from="1636948988867" duration="381000" />
+      <workItem from="1637017454857" duration="6232000" />
+      <workItem from="1637044140522" duration="37000" />
+      <workItem from="1637059736604" duration="3858000" />
+      <workItem from="1637117172101" duration="1880000" />
+      <workItem from="1637139888338" duration="2172000" />
+      <workItem from="1637169268027" duration="5067000" />
+      <workItem from="1637200284494" duration="581000" />
+      <workItem from="1637304777619" duration="673000" />
+      <workItem from="1637406641944" duration="1504000" />
+      <workItem from="1637496580923" duration="667000" />
+      <workItem from="1637588575705" duration="219000" />
+      <workItem from="1637588856125" duration="66000" />
+      <workItem from="1637666743637" duration="3833000" />
+      <workItem from="1637736127046" duration="5000" />
+      <workItem from="1637833312045" duration="615000" />
+      <workItem from="1637833956333" duration="1000" />
+    </task>
+    <task id="LOCAL-00035" summary="Repository 인터페이스 수정&#10;&#10;- 파라미터 명 수정">
+      <created>1636857922584</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1636857922584</updated>
+    </task>
+    <task id="LOCAL-00036" summary="ArticleService 테스트&#10;&#10;- 업로드&#10;- 게시글 전체 조회&#10;- 좋아요, 싫어요 기능&#10;- 싫어요 10개가 되면 게시글 자동 삭제&#10;- 자동 삭제 시 연관된 댓글도 같이 삭제">
+      <created>1636857995878</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1636857995878</updated>
+    </task>
+    <task id="LOCAL-00037" summary="JpaCommentRepository 수정&#10;&#10;- delete, plus, minus 메소드 반환 값 생성">
+      <created>1636858040662</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1636858040662</updated>
+    </task>
+    <task id="LOCAL-00038" summary="CommentService 수정&#10;&#10;- 파라미터 명 수정&#10;- 자동 삭제 기능 dislikes 메소드 내부에 생성&#10;- 댓글 전체 조회 메소드명 변환&#10;- 게시글 id 값으로 List 반환하는 메소드 추가">
+      <created>1636858121077</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1636858121077</updated>
+    </task>
+    <task id="LOCAL-00039" summary="기존 프로젝트 모두 제거">
+      <created>1636920389800</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1636920389800</updated>
+    </task>
+    <task id="LOCAL-00040" summary="프로젝트 설정 정보 변경&#10;&#10;- 프로젝트 명">
+      <created>1636920549657</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1636920549657</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Main.html 생성&#10;&#10;- 아직 게시글 전체 조회랑 다를바 없음&#10;- 추후 수정">
+      <created>1636920673925</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1636920673925</updated>
+    </task>
+    <task id="LOCAL-00042" summary="SearchUsername.html 생성&#10;&#10;- 아직 게시글 작성자에 따른 전체 조회랑 다를바 없음&#10;- 추후 수정">
+      <created>1636920733430</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1636920733430</updated>
+    </task>
+    <task id="LOCAL-00043" summary="ArticleController 생성&#10;&#10;- 메인 화면&#10;  - 게시글 목록 순서대로 정렬&#10;- Article 화면&#10;  - 제목, 작성일자, 작성자, 내용&#10;- SearchUsername 화면&#10;  - 해당 작성자가 작성한 게시글 모두 조회">
+      <created>1636935968815</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1636935968815</updated>
+    </task>
+    <task id="LOCAL-00044" summary="main.html 생성">
+      <created>1636935995981</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1636935995981</updated>
+    </task>
+    <task id="LOCAL-00045" summary="articlePage.html 생성">
+      <created>1636936011291</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1636936011291</updated>
+    </task>
+    <task id="LOCAL-00046" summary="SearchUsername.html 생성">
+      <created>1636936041270</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1636936041270</updated>
+    </task>
+    <task id="LOCAL-00047" summary="CommentServiceTest 생성&#10;&#10;- 업로드&#10;- 싫어요 시 자동삭제&#10;  - 댓글과 대댓글 모두 내용만 변경되는 것 확인">
+      <created>1637018767836</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1637018767836</updated>
+    </task>
+    <task id="LOCAL-00048" summary="main.html 수정&#10;&#10;- bootstrap 제거&#10;- 게시글 작성 버튼 추가">
+      <created>1637026670208</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1637026670208</updated>
+    </task>
+    <task id="LOCAL-00049" summary="articleForm.html 수정&#10;&#10;- 메인으로 버튼 생성&#10;- 제목, 작성자, 내용 form 태그로 입력">
+      <created>1637026711495</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1637026711495</updated>
+    </task>
+    <task id="LOCAL-00050" summary="articlePage.html 수정&#10;&#10;- bootstrap 제거&#10;- 메인으로 버튼 추가">
+      <created>1637027183791</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1637027183793</updated>
+    </task>
+    <task id="LOCAL-00051" summary="Artiu">
+      <created>1637027212276</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1637027212276</updated>
+    </task>
+    <task id="LOCAL-00052" summary="ArticleController 기능 추가&#10;&#10;- 게시글 작성 form 띄우는 화면&#10;- DTO 통해 내용 받아와서 게시글 올리고 리다이렉트">
+      <created>1637027277049</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1637027277049</updated>
+    </task>
+    <task id="LOCAL-00053" summary="Article 수정&#10;&#10;- updateArticle 메소드 생성&#10;  - username 수정 시 변경 없도록 하기 위함&#10;  - private 접근 제어자 title, content setter 생성">
+      <created>1637063095490</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1637063095490</updated>
+    </task>
+    <task id="LOCAL-00054" summary="ArticleService 수정&#10;&#10;- delete 메소드 생성">
+      <created>1637063165185</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1637063165185</updated>
+    </task>
+    <task id="LOCAL-00055" summary="ArticleRepository 수정&#10;&#10;- save 메소드 내에 수정 시 persist 아닌 merge">
+      <created>1637063191994</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1637063191994</updated>
+    </task>
+    <task id="LOCAL-00056" summary="articlePage.html 수정&#10;&#10;- 수정, 삭제 버튼 추후 업데이트 예정&#10;- 댓글 우선 테이블로 목록 나열">
+      <created>1637063255418</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1637063255418</updated>
+    </task>
+    <task id="LOCAL-00057" summary="article 생성 및 수정 form html&#10;&#10;- 생성 form 파일명 변경&#10;- 수정 form 생성">
+      <created>1637063303051</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1637063303051</updated>
+    </task>
+    <task id="LOCAL-00058" summary="ArticleController 기능 추가&#10;&#10;- Article 페이지에 해당 게시글의 댓글 목록 추가&#10;- update 관련 Get, Patch 메소드 추가&#10;- 삭제 관련 delete 메소드 추가">
+      <created>1637063373863</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1637063373863</updated>
+    </task>
+    <task id="LOCAL-00059" summary="ArticleController init 추가&#10;&#10;- 더 많은 게시물 및 댓글 추가">
+      <created>1637139827789</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1637139827790</updated>
+    </task>
+    <task id="LOCAL-00060" summary="gradle 설정 추가&#10;&#10;- validation 추가">
+      <created>1637139841573</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1637139841574</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Article 수정&#10;&#10;- 조회수 필드 추가&#10;- 조회수 더해주는 메서드 추가">
+      <created>1637174120214</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1637174120214</updated>
+    </task>
+    <task id="LOCAL-00062" summary="ArticleDTO 등록폼 수정폼으로 분할">
+      <created>1637174147960</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1637174147960</updated>
+    </task>
+    <task id="LOCAL-00063" summary="ArticleRepository 메소드 추가&#10;&#10;- 조회수 순으로 조회&#10;- 추천 순으로 조회">
+      <created>1637174220258</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1637174220258</updated>
+    </task>
+    <task id="LOCAL-00064" summary="CommentRepository 메소드 추가&#10;&#10;- 추천 순으로 조회">
+      <created>1637174242019</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1637174242019</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Service에 새로운 메소드 추가&#10;&#10;- 조회수 순 조회&#10;- 추천수 순 조회">
+      <created>1637174276997</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1637174276997</updated>
+    </task>
+    <task id="LOCAL-00066" summary="PopularController 생성&#10;&#10;- 인기글 조회는 별도의 컨트롤러 생성">
+      <created>1637174301282</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1637174301282</updated>
+    </task>
+    <task id="LOCAL-00067" summary="main.html 기능 추가&#10;&#10;- 검색창 생성&#10;- 인기 게시물 보기">
+      <created>1637174359166</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1637174359166</updated>
+    </task>
+    <task id="LOCAL-00068" summary="articlePage.html 기능 추가&#10;&#10;- 조회수, 좋아요, 싫어요 추가">
+      <created>1637174411747</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1637174411747</updated>
+    </task>
+    <task id="LOCAL-00069" summary="articlesAndComments.html 생성&#10;&#10;- 인기 순으로 조회">
+      <created>1637174439258</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1637174439258</updated>
+    </task>
+    <task id="LOCAL-00070" summary="ArticleController 기능 추가&#10;&#10;- articlePage 접근할 때마다 조회수 1 증가&#10;- article 등록폼 수정폼 분리한거 수정&#10;- html form 이라 PostMapping 사용">
+      <created>1637174547464</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1637174547464</updated>
+    </task>
+    <task id="LOCAL-00071" summary="html css 폴더 추가">
+      <created>1637321901049</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1637321901049</updated>
+    </task>
+    <task id="LOCAL-00072" summary="main 화면 추가">
+      <created>1637408455393</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1637408455394</updated>
+    </task>
+    <task id="LOCAL-00073" summary="리드미 수정">
+      <created>1637496630630</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1637496630630</updated>
+    </task>
+    <task id="LOCAL-00074" summary="리드미 수정">
+      <created>1637588924810</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1637588924811</updated>
+    </task>
+    <task id="LOCAL-00075" summary="리팩토링&#10;&#10;- import문 제거&#10;- ToString 제거">
+      <created>1637667275694</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1637667275694</updated>
+    </task>
+    <task id="LOCAL-00076" summary="댓글 작성 시간 추가&#10;&#10;- 댓글 저장 시 시간 저장되도록">
+      <created>1637667321313</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1637667321313</updated>
+    </task>
+    <task id="LOCAL-00077" summary="게시글에서 댓글 작성 창 생성&#10;&#10;- form 형식으로 만듦&#10;- 작성자와 내용을 입력받음">
+      <created>1637667756725</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1637667756725</updated>
+    </task>
+    <task id="LOCAL-00078" summary="댓글 작성 저장 기능&#10;&#10;- articlePage에서 댓글 정보 Post 받아서 저장">
+      <created>1637667816234</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1637667816234</updated>
+    </task>
+    <task id="LOCAL-00079" summary="메인 화면 게시글 번호 버그 수정&#10;&#10;- 게시글 번호 안보이는 버그 수정">
+      <created>1637668104477</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1637668104478</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Controller 분리&#10;&#10;- Article, Comment, Main 으로 분리">
+      <created>1637670596245</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1637670596245</updated>
+    </task>
+    <task id="LOCAL-00081" summary="SearchForm 생성&#10;&#10;- 메인 화면 검색창에서 받아올 정보를 담을 form">
+      <created>1637670634419</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1637670634419</updated>
+    </task>
+    <task id="LOCAL-00082" summary="SearchType 생성&#10;&#10;- enum type&#10;- title, content, username 중 선택한 것으로 검색">
+      <created>1637670666385</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1637670666385</updated>
+    </task>
+    <task id="LOCAL-00083" summary="검증 애노테이션 추가&#10;&#10;- 우선 대부분 String이라 NotBlank 선언">
+      <created>1637670715023</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1637670715023</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-core" />
+    <option featureType="dependencySupport" implementationName="java:org.junit.jupiter:junit-jupiter-params" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.xml.bind:jakarta.xml.bind-api" />
+    <option featureType="dependencySupport" implementationName="java:org.slf4j:jul-to-slf4j" />
+    <option featureType="dependencySupport" implementationName="java:org.javassist:javassist" />
+    <option featureType="dependencySupport" implementationName="java:org.hamcrest:hamcrest-core" />
+    <option featureType="dependencySupport" implementationName="java:org.hamcrest:hamcrest" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot-starter-data-jpa" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-commons" />
+    <option featureType="dependencySupport" implementationName="java:net.bytebuddy:byte-buddy-agent" />
+    <option featureType="dependencySupport" implementationName="java:org.junit.platform:junit-platform-engine" />
+    <option featureType="dependencySupport" implementationName="java:com.zaxxer:HikariCP" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-aspects" />
+    <option featureType="dependencySupport" implementationName="java:org.jboss:jandex" />
+    <option featureType="dependencySupport" implementationName="java:org.thymeleaf:thymeleaf-spring5" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-webmvc" />
+    <option featureType="dependencySupport" implementationName="java:net.minidev:accessors-smart" />
+    <option featureType="dependencySupport" implementationName="java:com.h2database:h2" />
+    <option featureType="dependencySupport" implementationName="java:org.dom4j:dom4j" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot-starter-test" />
+    <option featureType="dependencySupport" implementationName="java:org.aspectj:aspectjweaver" />
+    <option featureType="dependencySupport" implementationName="java:com.jayway.jsonpath:json-path" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-beans" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-test" />
+    <option featureType="dependencySupport" implementationName="java:com.fasterxml:classmate" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tomcat.embed:tomcat-embed-core" />
+    <option featureType="dependencySupport" implementationName="java:org.hibernate.common:hibernate-commons-annotations" />
+    <option featureType="dependencySupport" implementationName="java:com.fasterxml.jackson.datatype:jackson-datatype-jsr310" />
+    <option featureType="dependencySupport" implementationName="java:org.thymeleaf:thymeleaf" />
+    <option featureType="dependencySupport" implementationName="java:org.hibernate:hibernate-core" />
+    <option featureType="dependencySupport" implementationName="java:org.glassfish.jaxb:jaxb-runtime" />
+    <option featureType="dependencySupport" implementationName="java:org.skyscreamer:jsonassert" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tomcat.embed:tomcat-embed-websocket" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.data:spring-data-jpa" />
+    <option featureType="dependencySupport" implementationName="java:ch.qos.logback:logback-classic" />
+    <option featureType="dependencySupport" implementationName="java:org.mockito:mockito-junit-jupiter" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.activation:jakarta.activation-api" />
+    <option featureType="dependencySupport" implementationName="java:org.glassfish.jaxb:txw2" />
+    <option featureType="dependencySupport" implementationName="java:org.opentest4j:opentest4j" />
+    <option featureType="dependencySupport" implementationName="java:org.objenesis:objenesis" />
+    <option featureType="dependencySupport" implementationName="java:org.junit.jupiter:junit-jupiter" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-tx" />
+    <option featureType="dependencySupport" implementationName="java:junit:junit" />
+    <option featureType="dependencySupport" implementationName="java:org.junit.jupiter:junit-jupiter-engine" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-jcl" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-web" />
+    <option featureType="dependencySupport" implementationName="java:org.attoparser:attoparser" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot-starter-logging" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot-starter-aop" />
+    <option featureType="dependencySupport" implementationName="java:org.unbescape:unbescape" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot-starter-tomcat" />
+    <option featureType="dependencySupport" implementationName="java:com.fasterxml.jackson.core:jackson-annotations" />
+    <option featureType="dependencySupport" implementationName="java:ch.qos.logback:logback-core" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot-test" />
+    <option featureType="dependencySupport" implementationName="java:com.fasterxml.jackson.core:jackson-core" />
+    <option featureType="dependencySupport" implementationName="java:com.fasterxml.jackson.core:jackson-databind" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.logging.log4j:log4j-to-slf4j" />
+    <option featureType="dependencySupport" implementationName="java:org.junit.platform:junit-platform-commons" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.annotation:jakarta.annotation-api" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot-starter" />
+    <option featureType="dependencySupport" implementationName="java:org.jboss.logging:jboss-logging" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-orm" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot-devtools" />
+    <option featureType="dependencySupport" implementationName="java:org.slf4j:slf4j-api" />
+    <option featureType="dependencySupport" implementationName="java:org.ow2.asm:asm" />
+    <option featureType="dependencySupport" implementationName="java:org.thymeleaf.extras:thymeleaf-extras-java8time" />
+    <option featureType="dependencySupport" implementationName="java:antlr:antlr" />
+    <option featureType="dependencySupport" implementationName="java:org.yaml:snakeyaml" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot-autoconfigure" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-context" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot-test-autoconfigure" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot-starter-json" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-expression" />
+    <option featureType="dependencySupport" implementationName="java:com.sun.istack:istack-commons-runtime" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-aop" />
+    <option featureType="dependencySupport" implementationName="java:com.fasterxml.jackson.datatype:jackson-datatype-jdk8" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+    <option featureType="dependencySupport" implementationName="java:org.junit.jupiter:junit-jupiter-api" />
+    <option featureType="dependencySupport" implementationName="java:net.minidev:json-smart" />
+    <option featureType="dependencySupport" implementationName="java:org.assertj:assertj-core" />
+    <option featureType="dependencySupport" implementationName="java:com.fasterxml.jackson.module:jackson-module-parameter-names" />
+    <option featureType="dependencySupport" implementationName="java:com.vaadin.external.google:android-json" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot-starter-web" />
+    <option featureType="dependencySupport" implementationName="java:org.apiguardian:apiguardian-api" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework:spring-jdbc" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot-starter-jdbc" />
+    <option featureType="dependencySupport" implementationName="java:org.mockito:mockito-core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.tomcat.embed:tomcat-embed-el" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.transaction:jakarta.transaction-api" />
+    <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot-starter-thymeleaf" />
+    <option featureType="dependencySupport" implementationName="java:com.sun.activation:jakarta.activation" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.logging.log4j:log4j-api" />
+    <option featureType="dependencySupport" implementationName="java:org.xmlunit:xmlunit-core" />
+    <option featureType="dependencySupport" implementationName="java:net.bytebuddy:byte-buddy" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="ArticleController 기능 추가&#10;&#10;- Article 페이지에 해당 게시글의 댓글 목록 추가&#10;- update 관련 Get, Patch 메소드 추가&#10;- 삭제 관련 delete 메소드 추가" />
+    <MESSAGE value="ArticleController init 추가&#10;&#10;- 더 많은 게시물 및 댓글 추가" />
+    <MESSAGE value="gradle 설정 추가&#10;&#10;- validation 추가" />
+    <MESSAGE value="Article 수정&#10;&#10;- 조회수 필드 추가&#10;- 조회수 더해주는 메서드 추가" />
+    <MESSAGE value="ArticleDTO 등록폼 수정폼으로 분할" />
+    <MESSAGE value="ArticleRepository 메소드 추가&#10;&#10;- 조회수 순으로 조회&#10;- 추천 순으로 조회" />
+    <MESSAGE value="CommentRepository 메소드 추가&#10;&#10;- 추천 순으로 조회" />
+    <MESSAGE value="Service에 새로운 메소드 추가&#10;&#10;- 조회수 순 조회&#10;- 추천수 순 조회" />
+    <MESSAGE value="PopularController 생성&#10;&#10;- 인기글 조회는 별도의 컨트롤러 생성" />
+    <MESSAGE value="main.html 기능 추가&#10;&#10;- 검색창 생성&#10;- 인기 게시물 보기" />
+    <MESSAGE value="articlePage.html 기능 추가&#10;&#10;- 조회수, 좋아요, 싫어요 추가" />
+    <MESSAGE value="articlesAndComments.html 생성&#10;&#10;- 인기 순으로 조회" />
+    <MESSAGE value="ArticleController 기능 추가&#10;&#10;- articlePage 접근할 때마다 조회수 1 증가&#10;- article 등록폼 수정폼 분리한거 수정&#10;- html form 이라 PostMapping 사용" />
+    <MESSAGE value="html css 폴더 추가" />
+    <MESSAGE value="main 화면 추가" />
+    <MESSAGE value="리드미 수정" />
+    <MESSAGE value="리팩토링&#10;&#10;- import문 제거&#10;- ToString 제거" />
+    <MESSAGE value="댓글 작성 시간 추가&#10;&#10;- 댓글 저장 시 시간 저장되도록" />
+    <MESSAGE value="게시글에서 댓글 작성 창 생성&#10;&#10;- form 형식으로 만듦&#10;- 작성자와 내용을 입력받음" />
+    <MESSAGE value="댓글 작성 저장 기능&#10;&#10;- articlePage에서 댓글 정보 Post 받아서 저장" />
+    <MESSAGE value="메인 화면 게시글 번호 버그 수정&#10;&#10;- 게시글 번호 안보이는 버그 수정" />
+    <MESSAGE value="Controller 분리&#10;&#10;- Article, Comment, Main 으로 분리" />
+    <MESSAGE value="SearchForm 생성&#10;&#10;- 메인 화면 검색창에서 받아올 정보를 담을 form" />
+    <MESSAGE value="SearchType 생성&#10;&#10;- enum type&#10;- title, content, username 중 선택한 것으로 검색" />
+    <MESSAGE value="검증 애노테이션 추가&#10;&#10;- 우선 대부분 String이라 NotBlank 선언" />
+    <option name="LAST_COMMIT_MESSAGE" value="검증 애노테이션 추가&#10;&#10;- 우선 대부분 String이라 NotBlank 선언" />
+  </component>
+</project>
