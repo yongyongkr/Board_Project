@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <title>게시판</title>
+</head>
+<body>
+
+<a href="" th:href="@{/}">메인으로</a>
+
+<table>
+  <thead>
+  <tr>
+    <th>게시글 번호</th>
+    <th>제목</th>
+    <th>작성자</th>
+    <th>작성 시간</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="article : ${articles}">
+    <th th:text="${article.id}">1</th>
+    <td><a href="" th:href="@{|/article/${article.id}|}" th:text="${article.title}">Mark</a></td>
+    <td><a href="" th:href="@{|/${article.username}/information|}" th:text="${article.username}">Otto</a></td>
+    <td th:text="${article.createTime}">@mdo</td>
+  </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

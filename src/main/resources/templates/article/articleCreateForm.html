@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <title>게시판</title>
+</head>
+<body>
+
+<a href="" th:href="@{/}">메인으로</a>
+
+<form action="articleCreateForm.html" th:action method="post">
+  제목 : <input type="text" name="title"> <br>
+  작성자 : <input type="text" name="username"> <br>
+  <textarea name="content"></textarea> <br>
+
+  <input type="submit" value="등록">
+</form>
+
+</body>
+</html>

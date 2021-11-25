@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <title>게시판</title>
+</head>
+<body>
+
+<a href="" th:href="@{/}">메인으로</a>
+
+<article>
+  <h2>제목 : <span th:text="${article.title}"></span></h2>
+  <p>
+    <div>작성 일자 : <span th:text="${article.createTime}"></span></div>
+    <div>작성자 : <span th:text="${article.username}"></span></div>
+    <div>조회수 : <span th:text="${article.view}"></span></div>
+    <div>좋아요 : <span th:text="${article.likes}"></span></div>
+    <div>싫어요 : <span th:text="${article.dislikes}"></span></div>
+  </p>
+  <p th:text="${article.content}">본문 내용</p>
+</article>
+
+<a href="" th:href="@{|/article/update/${article.id}|}">수정</a>
+<a href="" th:href="@{|/article/delete/${article.id}|}">삭제</a>
+
+<form action="articlePage.html" th:action method="post">
+  작성자 : <input type="text" name="username"> <br>
+  <textarea name="content"></textarea> <br>
+  <input type="submit" value="등록">
+</form>
+
+<!-- 댓글 시작 -->
+<table>
+  <thead>
+  <tr>
+    <th>작성자</th>
+    <th>댓글 내용</th>
+    <th>작성 시간</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="comment : ${comments}">
+    <td><a href="" th:href="@{|/${comment.username}/information|}" th:text="${comment.username}">Otto</a></td>
+    <td th:text="${comment.content}">내용</td>
+    <td th:text="${comment.createTime}">@mdo</td>
+  </tr>
+  </tbody>
+</table>
+<!-- 댓글 끝 -->
+
+</body>
+</html>

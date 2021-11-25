@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>인기 게시글</title>
+</head>
+<body>
+
+<a href="" th:href="@{/}">메인으로</a>
+
+<!-- 게시글 목록 시작 -->
+<h1>게시글 조회순</h1>
+<table>
+  <thead>
+  <tr>
+    <th>게시글 번호</th>
+    <th>제목</th>
+    <th>작성자</th>
+    <th>조회수</th>
+    <th>작성 시간</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="article : ${articlesByView}">
+    <th th:text="${article.id}">1</th>
+    <td><a href="" th:href="@{|/article/${article.id}|}" th:text="${article.title}">Mark</td>
+    <td><a href="" th:href="@{|/${article.username}/information|}" th:text="${article.username}">Otto</td>
+    <td th:text="${article.view}">@mdo</td>
+    <td th:text="${article.createTime}">@mdo</td>
+  </tr>
+  </tbody>
+</table>
+<!-- 게시글 목록 끝 -->
+<!-- 게시글 목록 시작 -->
+<h1>게시글 좋아요순</h1>
+<table>
+  <thead>
+  <tr>
+    <th>게시글 번호</th>
+    <th>제목</th>
+    <th>작성자</th>
+    <th>좋아요</th>
+    <th>작성 시간</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="article : ${articlesByLikes}">
+    <th th:text="${article.id}">1</th>
+    <td><a href="" th:href="@{|/article/${article.id}|}" th:text="${article.title}">Mark</td>
+    <td><a href="" th:href="@{|/${article.username}/information|}" th:text="${article.username}">Otto</td>
+    <td th:text="${article.likes}">@mdo</td>
+    <td th:text="${article.createTime}">@mdo</td>
+  </tr>
+  </tbody>
+</table>
+<!-- 게시글 목록 끝 -->
+<!-- 댓글 목록 시작 -->
+<h1>댓글 좋아요순</h1>
+<table>
+  <thead>
+  <tr>
+    <th>내용</th>
+    <th>좋아요</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="comment : ${commentsByLikes}">
+    <td><a href="" th:href="@{|/article/${comment.article.id}|}" th:text="${comment.content}">Mark</td>
+    <td th:text="${comment.likes}">Mark</td>
+  </tr>
+  </tbody>
+</table>
+<!-- 댓글 목록 끝 -->
+</body>
+</html>
