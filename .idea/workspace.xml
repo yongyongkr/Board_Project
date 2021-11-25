@@ -5,87 +5,91 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b5dbeaf-f6b7-4706-bffc-8e9279262c5d" name="Changes" comment="검증 애노테이션 추가&#10;&#10;- 우선 대부분 String이라 NotBlank 선언">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/Board_Program.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/boardprogram.test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Board_Program/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/Board_Program/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/Board_Program/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/sql/ddl.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/BusinessCardProgramApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/controller/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/controller/MemberController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/controller/MemberSearchController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/domain/Member.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/dto/MemberForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/repository/JpaMemberRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/repository/MemberRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/java/businesscardprogram/service/MemberService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/resources/static/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/resources/templates/createTemp.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/resources/templates/home.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/resources/templates/members/createMemberForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/resources/templates/members/memberList.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/main/resources/templates/members/search.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/test/java/businesscardprogram/BusinessCardProgramApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/test/java/businesscardprogram/repository/JpaMemberRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_A/Business_Card_Program/src/test/java/businesscardprogram/service/MemberServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Board_Program/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Board_Program/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/sql/ddl.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/DTO/ArticleCreateForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/DTO/ArticleUpdateForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/DTO/CommentDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/DTO/SearchForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/DTO/SearchType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/controller/ArticleController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/controller/CommentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/controller/MainController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/controller/PopularController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/domain/Article.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/domain/BaseTimeEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/domain/Comment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/domain/DeletedStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/repository/ArticleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/repository/CommentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/repository/JpaArticleRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/repository/JpaCommentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/service/ArticleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/java/boardprogram/service/CommentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/static/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/static/main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/templates/article/SearchUsername.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/templates/article/articleCreateForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/templates/article/articlePage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/templates/article/articleUpdateForm.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/templates/main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/main/resources/templates/popular/articlesAndComments.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/test/java/boardprogram/ApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/test/java/boardprogram/repository/JpaArticleRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/test/java/boardprogram/repository/JpaCommentRepositoryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/test/java/boardprogram/service/ArticleServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project_B/Board_Program/src/test/java/boardprogram/service/CommentServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/DTO/ArticleCreateForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/DTO/ArticleUpdateForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/DTO/CommentDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/DTO/SearchForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/DTO/SearchType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/controller/ArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/controller/CommentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/controller/MainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/controller/PopularController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/controller/SearchController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/BaseTimeEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/domain/DeletedStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/repository/ArticleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/repository/CommentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/repository/JpaArticleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/repository/JpaCommentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/service/ArticleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/boardprogram/service/CommentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/article/SearchUsername.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/article/articleCreateForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/article/articlePage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/article/articleUpdateForm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/popular/articlesAndComments.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/boardprogram/ApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/boardprogram/repository/JpaArticleRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/boardprogram/repository/JpaCommentRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/boardprogram/service/ArticleServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/boardprogram/service/CommentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/DTO/ArticleCreateForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/DTO/ArticleUpdateForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/DTO/CommentDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/DTO/SearchForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/DTO/SearchType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/controller/ArticleController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/controller/CommentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/controller/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/controller/PopularController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/controller/SearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/domain/Article.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/domain/BaseTimeEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/domain/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/domain/DeletedStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/repository/ArticleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/repository/CommentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/repository/JpaArticleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/repository/JpaCommentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/service/ArticleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/java/boardprogram/service/CommentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/static/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/static/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/templates/article/SearchUsername.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/templates/article/articleCreateForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/templates/article/articlePage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/templates/article/articleUpdateForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/templates/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/main/resources/templates/popular/articlesAndComments.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/test/java/boardprogram/ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/test/java/boardprogram/repository/JpaArticleRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/test/java/boardprogram/repository/JpaCommentRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/test/java/boardprogram/service/ArticleServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Board_Program/src/test/java/boardprogram/service/CommentServiceTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -366,6 +370,7 @@
       <workItem from="1637736127046" duration="5000" />
       <workItem from="1637833312045" duration="615000" />
       <workItem from="1637833956333" duration="1000" />
+      <workItem from="1637835866011" duration="98000" />
     </task>
     <task id="LOCAL-00035" summary="Repository 인터페이스 수정&#10;&#10;- 파라미터 명 수정">
       <created>1636857922584</created>
