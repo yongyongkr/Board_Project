@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5dbeaf-f6b7-4706-bffc-8e9279262c5d" name="Changes" comment="chore: Comment 메소드명 변경, Controller 주석처리&#10;&#10;- Comment의 연관관계 메서드명 더 명확하게 변경&#10;- Controller는 추후 기능 추가 후 수정">
+    <list default="true" id="9b5dbeaf-f6b7-4706-bffc-8e9279262c5d" name="Changes" comment="feat&lt;JpaMemberRepository&gt;: 회원 저장 리포지토리 구현체 생성&#10;&#10;- JPA 사용하여 구현&#10;  - 저장&#10;  - 아이디로 찾기&#10;  - 닉네임으로 찾기&#10;  - 전체 조회&#10;  &#10;회원 리포지토리 jpa 구현체 생성">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/boardprogram/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/boardprogram/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/boardprogram/repository/JpaArticleRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/boardprogram/repository/JpaArticleRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/boardprogram/repository/JpaCommentRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/boardprogram/repository/JpaCommentRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/boardprogram/service/ArticleServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/boardprogram/service/ArticleServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/boardprogram/service/CommentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/boardprogram/service/CommentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/boardprogram/repository/JpaArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/boardprogram/repository/JpaArticleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/boardprogram/repository/JpaCommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/boardprogram/repository/JpaCommentRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,11 +37,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="JUnit5 Test Class" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -291,28 +288,8 @@
       <workItem from="1637736127046" duration="5000" />
       <workItem from="1637833312045" duration="615000" />
       <workItem from="1637833956333" duration="1000" />
-      <workItem from="1637835866011" duration="3627000" />
-    </task>
-    <task id="LOCAL-00042" summary="SearchUsername.html 생성&#10;&#10;- 아직 게시글 작성자에 따른 전체 조회랑 다를바 없음&#10;- 추후 수정">
-      <created>1636920733430</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1636920733430</updated>
-    </task>
-    <task id="LOCAL-00043" summary="ArticleController 생성&#10;&#10;- 메인 화면&#10;  - 게시글 목록 순서대로 정렬&#10;- Article 화면&#10;  - 제목, 작성일자, 작성자, 내용&#10;- SearchUsername 화면&#10;  - 해당 작성자가 작성한 게시글 모두 조회">
-      <created>1636935968815</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1636935968815</updated>
-    </task>
-    <task id="LOCAL-00044" summary="main.html 생성">
-      <created>1636935995981</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1636935995981</updated>
+      <workItem from="1637835866011" duration="3747000" />
+      <workItem from="1637933640029" duration="1434000" />
     </task>
     <task id="LOCAL-00045" summary="articlePage.html 생성">
       <created>1636936011291</created>
@@ -636,7 +613,28 @@
       <option name="project" value="LOCAL" />
       <updated>1637839182256</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="fix: 멤버, 게시물 연관관계 설정에 따른 버그 수정&#10;&#10;- 우선 간단하게 멤버를 일일이 대입&#10;- 추후 데이터를 만들어두고 공통으로 사용해 코드 중복 제거할 예정&#10;- Controller는 우선 member repository와 service 모두 만든 후 수정 예정">
+      <created>1637839639910</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1637839639910</updated>
+    </task>
+    <task id="LOCAL-00092" summary="feat&lt;MemberRepository&gt;: 회원 저장 리포지토리 인터페이스로 생성&#10;&#10;- 4개 메소드 생성&#10;  - 저장&#10;  - 아이디로 찾기&#10;  - 닉네임으로 찾기&#10;  - 전체 조회&#10;  &#10;회원 리포지토리 인터페이스로 생성">
+      <created>1637935009767</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1637935009768</updated>
+    </task>
+    <task id="LOCAL-00093" summary="feat&lt;JpaMemberRepository&gt;: 회원 저장 리포지토리 구현체 생성&#10;&#10;- JPA 사용하여 구현&#10;  - 저장&#10;  - 아이디로 찾기&#10;  - 닉네임으로 찾기&#10;  - 전체 조회&#10;  &#10;회원 리포지토리 jpa 구현체 생성">
+      <created>1637935044407</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1637935044407</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -754,9 +752,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Service에 새로운 메소드 추가&#10;&#10;- 조회수 순 조회&#10;- 추천수 순 조회" />
-    <MESSAGE value="PopularController 생성&#10;&#10;- 인기글 조회는 별도의 컨트롤러 생성" />
-    <MESSAGE value="main.html 기능 추가&#10;&#10;- 검색창 생성&#10;- 인기 게시물 보기" />
     <MESSAGE value="articlePage.html 기능 추가&#10;&#10;- 조회수, 좋아요, 싫어요 추가" />
     <MESSAGE value="articlesAndComments.html 생성&#10;&#10;- 인기 순으로 조회" />
     <MESSAGE value="ArticleController 기능 추가&#10;&#10;- articlePage 접근할 때마다 조회수 1 증가&#10;- article 등록폼 수정폼 분리한거 수정&#10;- html form 이라 PostMapping 사용" />
@@ -779,6 +774,9 @@
     <MESSAGE value="feat&lt;Article&gt;: 멤버 엔티티와의 연관관계&#10;&#10;- 지연 로딩 설정" />
     <MESSAGE value="feat&lt;Article&gt;: 멤버 엔티티와의 연관관계&#10;&#10;- 팩토리 메소드에 연관관계 설정" />
     <MESSAGE value="chore: Comment 메소드명 변경, Controller 주석처리&#10;&#10;- Comment의 연관관계 메서드명 더 명확하게 변경&#10;- Controller는 추후 기능 추가 후 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: Comment 메소드명 변경, Controller 주석처리&#10;&#10;- Comment의 연관관계 메서드명 더 명확하게 변경&#10;- Controller는 추후 기능 추가 후 수정" />
+    <MESSAGE value="fix: 멤버, 게시물 연관관계 설정에 따른 버그 수정&#10;&#10;- 우선 간단하게 멤버를 일일이 대입&#10;- 추후 데이터를 만들어두고 공통으로 사용해 코드 중복 제거할 예정&#10;- Controller는 우선 member repository와 service 모두 만든 후 수정 예정" />
+    <MESSAGE value="feat&lt;MemberRepository&gt;: 회원 저장 리포지토리 인터페이스로 생성&#10;&#10;- 4개 메소드 생성&#10;  - 저장&#10;  - 아이디로 찾기&#10;  - 닉네임으로 찾기&#10;  - 전체 조회&#10;  &#10;회원 리포지토리 인터페이스로 생성" />
+    <MESSAGE value="feat&lt;JpaMemberRepository&gt;: 회원 저장 리포지토리 구현체 생성&#10;&#10;- JPA 사용하여 구현&#10;  - 저장&#10;  - 아이디로 찾기&#10;  - 닉네임으로 찾기&#10;  - 전체 조회&#10;  &#10;회원 리포지토리 jpa 구현체 생성" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat&lt;JpaMemberRepository&gt;: 회원 저장 리포지토리 구현체 생성&#10;&#10;- JPA 사용하여 구현&#10;  - 저장&#10;  - 아이디로 찾기&#10;  - 닉네임으로 찾기&#10;  - 전체 조회&#10;  &#10;회원 리포지토리 jpa 구현체 생성" />
   </component>
 </project>
