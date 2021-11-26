@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b5dbeaf-f6b7-4706-bffc-8e9279262c5d" name="Changes" comment="feat&lt;JpaMemberRepository&gt;: 회원 저장 리포지토리 구현체 생성&#10;&#10;- JPA 사용하여 구현&#10;  - 저장&#10;  - 아이디로 찾기&#10;  - 닉네임으로 찾기&#10;  - 전체 조회&#10;  &#10;회원 리포지토리 jpa 구현체 생성">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/boardprogram/repository/JpaArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/boardprogram/repository/JpaArticleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/boardprogram/repository/JpaCommentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/boardprogram/repository/JpaCommentRepository.java" afterDir="false" />
-    </list>
+    <list default="true" id="9b5dbeaf-f6b7-4706-bffc-8e9279262c5d" name="Changes" comment="style: 캠퍼스 핵데이 java 코딩 컨벤션 사용&#10;&#10;기존의 구글 스타일 가이브에서 캠퍼스 핵데이 자바 코딩 컨벤션으로 변경" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -289,14 +285,7 @@
       <workItem from="1637833312045" duration="615000" />
       <workItem from="1637833956333" duration="1000" />
       <workItem from="1637835866011" duration="3747000" />
-      <workItem from="1637933640029" duration="1434000" />
-    </task>
-    <task id="LOCAL-00045" summary="articlePage.html 생성">
-      <created>1636936011291</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1636936011291</updated>
+      <workItem from="1637933640029" duration="1523000" />
     </task>
     <task id="LOCAL-00046" summary="SearchUsername.html 생성">
       <created>1636936041270</created>
@@ -634,7 +623,14 @@
       <option name="project" value="LOCAL" />
       <updated>1637935044407</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="style: 캠퍼스 핵데이 java 코딩 컨벤션 사용&#10;&#10;기존의 구글 스타일 가이브에서 캠퍼스 핵데이 자바 코딩 컨벤션으로 변경">
+      <created>1637935165239</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1637935165239</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -752,7 +748,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="articlePage.html 기능 추가&#10;&#10;- 조회수, 좋아요, 싫어요 추가" />
     <MESSAGE value="articlesAndComments.html 생성&#10;&#10;- 인기 순으로 조회" />
     <MESSAGE value="ArticleController 기능 추가&#10;&#10;- articlePage 접근할 때마다 조회수 1 증가&#10;- article 등록폼 수정폼 분리한거 수정&#10;- html form 이라 PostMapping 사용" />
     <MESSAGE value="html css 폴더 추가" />
@@ -777,6 +772,7 @@
     <MESSAGE value="fix: 멤버, 게시물 연관관계 설정에 따른 버그 수정&#10;&#10;- 우선 간단하게 멤버를 일일이 대입&#10;- 추후 데이터를 만들어두고 공통으로 사용해 코드 중복 제거할 예정&#10;- Controller는 우선 member repository와 service 모두 만든 후 수정 예정" />
     <MESSAGE value="feat&lt;MemberRepository&gt;: 회원 저장 리포지토리 인터페이스로 생성&#10;&#10;- 4개 메소드 생성&#10;  - 저장&#10;  - 아이디로 찾기&#10;  - 닉네임으로 찾기&#10;  - 전체 조회&#10;  &#10;회원 리포지토리 인터페이스로 생성" />
     <MESSAGE value="feat&lt;JpaMemberRepository&gt;: 회원 저장 리포지토리 구현체 생성&#10;&#10;- JPA 사용하여 구현&#10;  - 저장&#10;  - 아이디로 찾기&#10;  - 닉네임으로 찾기&#10;  - 전체 조회&#10;  &#10;회원 리포지토리 jpa 구현체 생성" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat&lt;JpaMemberRepository&gt;: 회원 저장 리포지토리 구현체 생성&#10;&#10;- JPA 사용하여 구현&#10;  - 저장&#10;  - 아이디로 찾기&#10;  - 닉네임으로 찾기&#10;  - 전체 조회&#10;  &#10;회원 리포지토리 jpa 구현체 생성" />
+    <MESSAGE value="style: 캠퍼스 핵데이 java 코딩 컨벤션 사용&#10;&#10;기존의 구글 스타일 가이브에서 캠퍼스 핵데이 자바 코딩 컨벤션으로 변경" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: 캠퍼스 핵데이 java 코딩 컨벤션 사용&#10;&#10;기존의 구글 스타일 가이브에서 캠퍼스 핵데이 자바 코딩 컨벤션으로 변경" />
   </component>
 </project>
